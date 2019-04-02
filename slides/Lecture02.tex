@@ -1,0 +1,725 @@
+\documentclass[10pt,a4paper]{beamer}
+\setbeamertemplate{caption}[numbered]
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{url}
+\usepackage{textcomp,booktabs,threeparttable}
+\usepackage{verbatim}
+\usepackage{movie15}
+
+\graphicspath{{../ISLR/CanYang/}{../ISLR/graphics/}}
+
+%\input{macros}
+\def\bit{\begin{itemize}}
+\def\eit{\end{itemize}}
+\def\rank{\text{rank}}
+
+
+\mode<presentation> {
+	\usetheme{Warsaw}
+	\setbeamercovered{transparent}
+}
+
+\title[Overview]{Chapter 2: Overview of Supervised Learning}
+\author[Yuan Yao]{Yuan Yao}
+\institute[HKUST] {
+   Department of Mathematics \\
+   Hong Kong University of Science and Technology\\
+
+   \vspace{4mm}
+   Most of the materials here are from Chapter 2 of Introduction to Statistical learning by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani.\\
+   \vspace{2mm}
+    Other related materials are listed in Reference.
+
+}
+\date[Spring, 2019]{Spring, 2019}
+\AtBeginSection[]{
+	\begin{frame}<beamer>{Outline}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Probability vs. Statistical Machine Learning}
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=.9\textwidth]{figure//prob-stat.pdf}
+%  \caption{\small Probability vs. Statistics}\label{}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=.6\textwidth]{figure//allofstatistics.png}
+  \caption{\small Larry Wasserman's classification of statistical learning vs. machine learning in Computer Science }\label{}
+\end{figure}
+\end{frame}
+
+   \begin{frame}
+   	\frametitle{Supervised vs. Unsupervised Learning}
+   	\begin{itemize}
+		\item Supervised Learning
+		\begin{itemize}
+		\item {\bf Data}: $(x,y)$, where $x$ is data and $y$ is label
+		\item {\bf Goal}: learn a function to map $x\to y$
+		\item {\bf Examples}: classification (object detection, segmentation, image captioning), regression, etc.
+		\item {\bf Golden standard}: \textcolor{red}{\emph{prediction}}! 
+		\end{itemize}
+   		\item Unsupervised Learning
+		\begin{itemize}
+		\item {\bf Data}: $x$, just data and no labels!
+		\item {\bf Goal}: learn some hidden structure of data $x$
+		\item {\bf Examples}: clustering (topological data analysis), dimensionality reduction (geometric data analysis), representation learning (CNN/RNN), density estimation (GAN), etc.
+		\item {\bf Golden standard}: Non! 
+		\end{itemize}
+   	\end{itemize}
+   \end{frame}
+
+
+   \begin{frame}
+   	\frametitle{Related Courses}
+   	\begin{itemize}
+		\item Supervised Learning 
+		\begin{itemize}
+		\item Math 4432: Statistical Machine Learning \textcolor{blue}{\url{https://yuany-pku.github.io/2018_math4432/}}
+		\item Math 5470, Statistical Learning, by Bingyi JING
+		\item Math 6380o, Deep learning (\textcolor{blue}{\url{https://deeplearning-math.github.io/}})
+		\item Best machine learning algorithms: \textcolor{red}{neural networks, random forests, and support vector machines}
+%   		\item Basic and standard contents: supervised learning (regression and classification)
+%   		\item Advanced topics: nonlinear models, tree methods, boosting, svm, neural networks...
+%   		\item Emphasize model selection (such as regularization, validation) that are directly related with learning/prediction.	
+		\end{itemize}
+		\item Unsupervised Learning
+		\begin{itemize}
+		\item Math 4432: Statistical Machine Learning (PCA/clustering) \textcolor{blue}{\url{https://yuany-pku.github.io/2018_math4432/}}
+		\item CSIC 5011, Topological and Geometric Data Reduction (\textcolor{blue}{\url{https://yao-lab.github.io/2019_csic5011/}})
+		\item Math 6380o, Deep learning (Generative models and GANs) (\textcolor{blue}{\url{https://deeplearning-math.github.io/}})
+
+		\end{itemize}
+   	\end{itemize}
+   \end{frame}
+   
+\begin{frame}
+	\frametitle{Today: Introduction to Supervised Learning}
+	\begin{itemize}	 
+	   	\item Basic and standard contents: supervised learning (regression and classification)
+   		\item Advanced topics: nonlinear models, tree methods, boosting, svm, neural networks...
+   		\item Emphasize model selection (such as regularization, validation) that are directly related with learning/prediction.	
+		\item {\bf Textbook A}: Chapter 2 of An introduction to Statistical Learning with Applications in R (ISLR)		 
+		\item {\bf Textbook B}: Elements of Statistical Learning (ESL)
+%		\item Will stick with ISL and may cite ESL accassionally.
+%		\item data from the library of ISLR:  type { \tt library(ISLR)}
+%		\item Programming languages: R or Python
+%		\item Acknowledge the use of the graphics in the textbook/refernce for only the purpose of presentation.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+
+
+\section{What is Statistical (Supervised) Learning?}
+
+\begin{frame}{Statistical (supervised) learning}
+
+\begin{itemize}\small
+  \item Suppose that we observe a quantitative response $Y$ and $p$
+different predictors, $X_1,X_2,\dots,X_p$. We assume that there is some
+relationship between $Y$ and $X =(X_1,X_2,\dots,X_p)$, which can be written
+in the very general form
+\begin{equation}\label{model}
+  Y = f(X) + \epsilon,
+\end{equation}
+where $f$ is some fixed but unknown function of $X_1,\dots,X_p$,and $\epsilon$ is a random
+\emph{error} term, which is independent of $X$ and has mean zero. In this formulation, $f$ represents the \emph{systematic} information that $X$ provides about $Y$.
+\item In essence, statistical learning refers to a set of approaches for estimating
+$f$. In this chapter we outline some of the key theoretical concepts that arise
+in estimating $f$, as well as tools for evaluating the estimates obtained.
+\item There are two main reasons that we may wish to estimate $f$: \emph{prediction}
+and \emph{inference}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Prediction}
+
+
+
+\begin{itemize}\footnotesize
+  \item In many situations, a set of inputs $X$ are readily available, but the output
+$Y$ cannot be easily obtained. In the context of time series analysis, $X$ could correspond to $X_{t-1},\dots,X_{t-p}$, and $Y$ corresponds to $X_{t}$.
+\item We can predict $Y$ using
+\begin{equation}\label{}
+  \hat{Y} = \hat{f}(X),
+\end{equation}
+where $\hat{f}$ represents our estimate for $f$, and $\hat{Y}$ represents the resulting prediction for $Y$.  The accuracy of $\hat{Y}$ as a prediction for $Y$ depends on two quantities:
+  \begin{itemize}
+    \item \textbf{reducible error}: $\hat{f}$ will not be a perfect estimate for $f$, and this inaccuracy will introduce
+some error. This error is reducible because we can potentially improve the
+accuracy of $\hat{f}$ by using the most appropriate statistical learning technique to
+estimate $f$.
+    \item \textbf{irreducible error}: Even if it were possible to form a perfect estimate for
+$f$, so that our estimated response took the form $\hat{Y}=f(X)$, our prediction
+would still have some error in it! This is because $Y$ is also a function of
+$\epsilon$, which, by definition, cannot be predicted using $X$. Therefore, variability
+associated with $\epsilon$ also affects the accuracy of our predictions. This is known
+as the irreducible error, because no matter how well we estimate $f$, we
+cannot reduce the error introduced by $\epsilon$.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{}
+
+\begin{itemize}\small
+  \item Why is the irreducible error larger than zero? The quantity $\epsilon$ may contain unmeasured variables that are useful in predicting $Y$: since we don't
+measure them, $f$ cannot use them for its prediction. The quantity $\epsilon$ may also contain unmeasurable variation (any thoughts here?).
+  \item Consider a given estimate $\hat{f}$ and a set of predictors $X$, which yields the
+$\hat{Y} = \hat{f}(X)$. Assume for a moment that both $\hat{f}$ and $X$ are fixed.
+Then, it is easy to show that
+\begin{equation}\label{Reducible_Irrededucible_error}
+\begin{aligned}
+  \mathbb{E}(Y-\hat{Y})^2 &= \mathbb{E}[f(X)+\epsilon - \hat{f}(X)]^2\\
+  &=\underbrace{[f(X)-\hat{f}(X)]^2}_{\mbox{\textbf{Reducible}}} + \underbrace{Var(\epsilon)}_{\mbox{\textbf{Irreducible}}},
+\end{aligned}
+\end{equation}
+where $\mathbb{E}(Y-\hat{Y})^2$ represents the expected value of the squared difference between the predicted and actual value of $Y$, and $Var(\epsilon)$ represents the variance associated with the error term $\epsilon$.
+  \item The focus of this course is on techniques for estimating $f$ with the aim of
+minimizing the reducible error. It is important to keep in mind that the
+irreducible error will always provide an upper bound on the accuracy of
+our prediction for $Y$. This bound is almost always unknown in practice.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Inference}
+
+We are often interested in understanding the way that $Y$ is affected as
+$X_1,\dots,X_p$ change. In this situation we wish to estimate $f$, but our goal is
+not necessarily to make predictions for $Y$. We instead want to understand
+the relationship between $X$ and $Y$, or more specifically, to understand how
+$Y$ changes as a function of $X_1,\dots,X_p$.
+\begin{itemize}
+  \item Which predictors are associated with the response?
+  \item What is the relationship between the response and each predictor?
+  \item Can the relationship between $Y$ and each predictor be adequately summarized using a linear equation, or is the relationship more complicated?
+  \item How much is the uncertainty of your prediction or estimation given finite information? 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{How to estimate $f$?}
+
+Depending on whether our ultimate goal is prediction, inference, or a
+combination of the two, different methods for estimating $f$ may be appropriate.
+
+\begin{itemize}
+  \item Assume that we have observed a set of $n$ different
+data points. These observations are called the \emph{training data} because we will use these
+observations to train, or teach, our method how to estimate $f$.
+  \item Our goal is to apply a statistical learning method to the training data
+in order to estimate the unknown function $f$. In other words, we want to find a function $\hat{f}$ such that $Y \approx \hat{f}(X)$ for any observation $(X,Y)$.
+  \item Most statistical learning methods for this task can be characterized as either \emph{parametric} or \emph{non-parametric}.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Parametric Methods}
+
+Parametric methods involve a two-step model-based approach.
+
+\begin{itemize}
+  \item First, we make an assumption about the functional form, or shape,
+of $f$. For example, one very simple assumption is that $f$ is linear in $X$:
+\begin{equation}\label{linear}
+  f(X)= \beta_0 +\beta_1 X_1 +\beta_2 X_2 + \dots + \beta_p X_p.
+\end{equation}
+Once we have assumed that $f$ is linear, the problem of estimating $f$ is greatly simplified. Instead of having to estimate an entirely
+arbitrary $p$-dimensional function $f(X)$, one only needs to estimate
+the $p+1$ coefficients $\beta_0,\beta_1,\dots,\beta_p$.
+  \item After a model has been selected, we need a procedure that uses the
+training data to fit or train the model. That is, we want to find values of these parameters such that
+\begin{equation}\label{}
+  Y \approx \beta_0 +\beta_1 X_1 +\beta_2 X_2 + \dots + \beta_p X_p.
+\end{equation}
+The most common approach to fitting the model (\ref{linear}) is referred to as \emph{(ordinary) least squares}.
+\end{itemize}
+The model-based approach just described is referred to as \emph{parametric};
+it reduces the problem of estimating $f$ down to one of estimating a set of parameters.
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\begin{itemize}
+  \item Assuming a parametric form for $f$ simplifies the problem of
+estimating $f$ because it is generally much easier to estimate a set of parameters, such as $\beta_0,\beta_1,\dots,\beta_p$ in the linear model (\ref{linear}), than it is to fit
+an entirely arbitrary function $f$.
+  \item The potential disadvantage of a parametric approach is that the model we choose will usually not match the true
+unknown form of $f$. If the chosen model is too far from the true $f$,then
+our estimate will be poor.
+  \item We can try to address this problem by choosing \emph{flexible} models that can fit many different possible functional forms flexible
+for $f$. But in general, fitting a more flexible model requires estimating a
+greater number of parameters. These more complex models can lead to a
+phenomenon known as \textbf{overfitting} the data, which essentially means they follow the errors, or noise, too closely.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Non-parametric Methods}
+\begin{itemize}
+  \item Non-parametric methods do not make explicit assumptions about the functional form of $f$. Instead they seek an estimate of $f$ that gets as close to the
+data points as possible without being too rough or wiggly.
+  \item Such approaches can have a major advantage over parametric approaches: by avoiding the assumption of a particular functional form for $f$, they have the potential to accurately fit a wider range of possible shapes for $f$.
+  \item Any parametric approach brings with it the possibility that the functional form used to
+estimate $f$ is very different from the true $f$, in which case the resulting
+model will not fit the data well.
+\item In contrast, non-parametric approaches completely avoid this danger, since essentially no assumption about the form of $f$ is made.
+\item But non-parametric approaches do suffer from a major disadvantage: since they do not reduce the problem of estimating $f$ to a small number of parameters, a very large number of observations (far more than is typically needed for a parametric approach) is required in order to obtain an accurate estimate for $f$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=.3\textwidth]{figure//2_3.pdf}
+  \includegraphics[width=.3\textwidth]{figure//2_4.pdf}\\
+
+  \includegraphics[width=.3\textwidth]{figure//2_5.pdf}
+  \includegraphics[width=.3\textwidth]{figure//2_6.pdf}\\
+  \caption{\small An illustrative example. Upper Left: A simulated \emph{Income} data (red dots) with its true generative model (blue surface).
+  Upper Right: A fitted Linear model (parametric). Lower Left: A fitted spline model (non-parametric). Lower Right: A fitted rough spline model with zero errors on the training data. }\label{}
+\end{figure}
+
+
+\end{frame}
+
+\section{Assessing Model Accuracy}
+
+\begin{frame}{``No free lunch in statistics''}
+
+\begin{itemize}
+  \item Why is it necessary to introduce so many different
+statistical learning approaches, rather than just a single best method? \textbf{There
+is no free lunch in statistics}: no one method dominates all others over all possible data sets. On a particular data set, one specific method may work
+best, but some other method may work better on a similar but different
+data set.
+  \item Hence it is an important task to decide for any given set of data
+which method produces the best results. Selecting the best approach can
+be one of the most challenging parts of performing statistical learning in
+practice.
+  \item In this section, we discuss some of the most important concepts that
+arise in selecting a statistical learning procedure for a specific data set.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Measuring the Quality of Fit}
+
+\begin{itemize}\small
+  \item In the regression setting, the
+most commonly-used measure is the \emph{mean squared error} (MSE), given by
+\begin{equation}\label{TrainMSE}
+  MSE = \frac{1}{n}\sum^n_{i=1} (y_i-\hat{f}(x_i))^2,
+\end{equation}
+where $f(x_i)$ is the prediction that $\hat{f}$ gives for the $i$-th observation.
+  \item The MSE in (\ref{TrainMSE}) is computed using the \emph{training} data that was used to
+fit the model, and so should more accurately be referred to as the \emph{training MSE}.
+  \item But in general, we do not really care how well the method works training
+MSE on the training data. Rather, \textbf{we are interested in the accuracy of the predictions that we obtain when we apply our method to previously unseen
+test data}.
+\item Suppose that we are interested test data
+in developing an algorithm to predict a stock's price based on previous
+stock returns. We can train the method using stock returns from the past
+6 months. But we don't really care how well our method predicts last week's
+stock price. We instead care about how well it will predict tomorrow's price
+or next month's price.
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+  \item To state it more mathematically, suppose that we fit our statistical learning method on our training observations $\{(x_1,y_1),(x_2,y_2),\dots,(x_n,y_n)\}$ and we obtain the estimate $\hat{f}$.
+  \item We can then compute $\hat{f}(x_1), \hat{f}(x_2),\dots,\hat{f}(x_n)$. If these are approximately equal to $y_1,y_2,...,y_n$, then the training MSE given by (\ref{TrainMSE}) is small.
+  \item However, we are really not interested in whether $\hat{f}(x_i) \approx y_i$; instead, we want to know whether $\hat{f}(x_0)$ is approximately equal to $y_0$, where $(x_0,y_0)$ is a \textbf{previously unseen test observation not used to train the statistical learning method}.
+  \item We want to choose the method that gives
+the lowest \textbf{test MSE}, as opposed to the lowest training MSE. In other words, if we had a large number of test observations, we could compute
+\begin{equation}\label{testMSE}
+  Ave(\hat{f}(x_0)-y_0)^2,
+\end{equation}
+the average squared prediction error for these test observations $(x_0,y_0)$.
+We'd like to select the model for which the average of this quantity-the
+test MSE-is as small as possible.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{}
+\begin{itemize}\small
+  \item How can we go about trying to select a method that minimizes the test
+MSE? In some settings, we may have a test data set available-that is,
+we may have access to a set of observations that were not used to train
+the statistical learning method. We can then simply evaluate (\ref{testMSE}) on the test observations, and select the learning method for which the test MSE is smallest.
+ \item But what if no test observations are available? In that case, one might imagine simply selecting a statistical learning method that minimizes the training MSE (\ref{TrainMSE}). This seems like it might be a sensible approach, since the training MSE and the test MSE appear to be closely related.
+  \item Unfortunately, there is a fundamental problem with this strategy: there
+is no guarantee that the method with the lowest training MSE will also
+have the lowest test MSE. Roughly speaking, the problem is that many
+statistical methods specifically estimate coefficients so as to minimize the
+training set MSE. For these methods, the training set MSE can be quite
+small, but the test MSE is often much larger.
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=0.8\textwidth]{figure//2_9.pdf}\\
+  \caption{Illustration. Left: Data simulated from $f$, shown in black. Three estimates of
+$f$ are shown: the linear regression line (orange curve), and two smoothing spline
+fits (blue and green curves). Right: Training MSE (grey curve), test MSE (red
+curve), and minimum possible test MSE over all methods (dashed line). Squares
+represent the training and test MSEs for the three fits shown in the left-hand
+panel.}\label{2_9}
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}{Comments on Left panel of Figure \ref{2_9}}
+
+\begin{itemize}
+%  \item Observations were generated using model (\ref{model}) with the true $f$ indicated by the black curve.
+  \item The orange, blue and green curves illustrate three possible estimates for $f$ obtained using methods with increasing
+levels of flexibility. The orange line is the linear regression fit, which is relatively inflexible. The blue and green curves were produced using smoothing
+splines with different levels of smoothness.
+\begin{equation}\label{spline}
+  \sum^n_{i=1}(y_i - g(x_i))^2 + \lambda \int g^{\prime\prime}(t)^2 dt
+\end{equation}
+where $\lambda$ is a nonnegative tuning parameter. The function $g$ that minimizes (\ref{spline}) is known as a smoothing spline.
+\item As $\lambda$ tends to $\infty$, the function $g$ tends to linear because $\int g^{\prime\prime}(t)^2 dt$ has to tend to 0.
+  \item It is clear that as the level of flexibility increases, the curves fit the observed
+data more closely. The green curve is the most flexible and matches the
+data very well; however, we observe that it fits the true $f$ (shown in black)
+poorly because it is too wiggly. By adjusting the level of flexibility of the
+smoothing spline fit, we can produce many different fits to this data.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Comments on Right panel of Figure \ref{2_9}: Training MSE}
+
+\begin{itemize}\small
+  \item The grey curve displays the average training MSE as a function of flexibility, or more formally, the \textbf{degrees of freedom} which is a quantity that summarizes the flexibility of a model. The orange, blue and green squares
+indicate the MSEs associated with the corresponding curves in the left-hand panel.
+  \item A more restricted and hence smoother curve has fewer degrees
+of freedom than a wiggly curve, linear regression
+is at the most restrictive end, with two degrees of freedom. The training
+MSE declines monotonically as flexibility increases. In this example the
+true $f$ is non-linear, and so the orange linear fit is not flexible enough to
+estimate $f$ well. The green curve has the lowest training MSE of all three
+methods, since it corresponds to the most flexible of the three curves fit in
+the left-hand panel.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Comments on Right panel of Figure \ref{2_9}: Test MSE}
+
+\begin{itemize}
+  \item In this example, we know the true function $f$, and so we can also compute the test MSE over a very large test set, as a function of flexibility. (Of
+course, in general $f$ is unknown, so this will not be possible.)
+  \item As with the training MSE, the test MSE initially declines as the level of flexibility increases. However, at some point the test MSE levels off and then
+starts to increase again. Consequently, the orange and green curves both have higher test MSE. The blue curve minimizes the test MSE, which should
+not be surprising given that visually it appears to estimate f the best.
+  \item The horizontal dashed line indicates $Var(\epsilon)$, the irreducible error in (\ref{Reducible_Irrededucible_error}), which corresponds to the lowest achievable
+test MSE among all possible methods.
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{Overfitting}
+
+\begin{itemize}\small
+  \item In the right-hand panel of Figure \ref{2_9}, as the flexibility of the statistical
+learning method increases, we observe a monotone decrease in the training MSE and a U-shape in the test MSE.
+  \item This is a fundamental property of
+statistical learning that holds regardless of the particular data set at hand
+and regardless of the statistical method being used. \textbf{As model flexibility
+increases, training MSE will decrease, but the test MSE may not}.
+\item When a given method yields a small training MSE but a large test MSE, we are
+said to be \textbf{overfitting} the data. This happens because our statistical learning
+procedure is working too hard to find patterns in the training data, and
+may be picking up some patterns that are just caused by random chance
+rather than by true properties of the unknown function $f$.
+\item When we overfit the training data, the test MSE will be very large because the supposed
+patterns that the method found in the training data simply don't exist
+in the test data.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=0.9\textwidth]{figure//2_10.pdf}\\
+  \caption{More illustration. Details are as in Figure \ref{2_9}, using a different \textbf{true $f$ that is
+much closer to linear}. In this setting, linear regression provides a very good fit to
+the data.}\label{}
+\end{figure}
+
+
+\end{frame}
+
+
+
+\begin{frame}{}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=0.9\textwidth]{figure//2_11.pdf}\\
+  \caption{More illustration. Details are as in Figure \ref{2_9}, using a different \textbf{true $f$ that is far from
+linear}. In this setting, linear regression provides a very poor fit to the data (\textbf{underfitting}).}\label{2_11}
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}{}
+
+\begin{itemize}
+  \item In practice, one can usually compute the training MSE with relative
+ease, but estimating test MSE is considerably more difficult because usually
+no test data are available.
+  \item As the previous three examples illustrate, the
+flexibility level corresponding to the model with the minimal test MSE can
+vary considerably among data sets.
+  \item In Chapter 3, we discuss some approaches that can be used in practice to estimate this minimum point, such as \textbf{Cross-validation} which is
+method for estimating test MSE using the training data.
+\end{itemize}
+
+\end{frame}
+
+
+\section{The Bias-Variance Trade-Off}
+\begin{frame}{The Bias-Variance Trade-Off}
+
+\begin{itemize}
+  \item Let $f(X)$ be the true function which we aim at estimating from a training data set $\mathcal{D}$.
+  \item Let $\hat{f}(X;\mathcal{D})$ be the estimated function from the training data set $\mathcal{D}$.
+  \item Are we really interested in
+  \begin{equation}\label{}
+    \min_{\hat{f}} \left[f(X) - \hat{f}(X;\mathcal{D})\right]^2?
+  \end{equation}
+  \item \textbf{Fisher's view}: the measurements are a \textbf{random selection} from the set of all
+possible measurements which form the true distribution!
+\item What we really care is
+  \begin{equation}\label{}
+    \min_{\hat{f}} {\color{blue}{\mathbb{E}_{\mathcal{D}}}}\left[f(X) - \hat{f}(X;\mathcal{D})\right]^2,
+  \end{equation}
+where randomness caused by \textbf{random selection} has been taken into account.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+
+
+\begin{itemize}
+  \item If we add and subtract $\mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D}))$ inside the braces and then expand, we obtain
+  \begin{equation}\label{}\nonumber\small
+\begin{aligned}
+&\left[f(X) - \hat{f}(X;\mathcal{D})\right]^2\\
+=& \left[f(X) - \mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D})) + \mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D})) - \hat{f}(X;\mathcal{D})\right]^2\\
+=& \left[f(X) - \mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D}))\right]^2 + \left[\mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D})) - \hat{f}(X;\mathcal{D})\right]^2 \\
+&+ 2\left[ f(X)- \mathbb{E}_{\mathcal{D}}[\hat{f}(X;\mathcal{D})] \right] \left[\mathbb{E}_{\mathcal{D}}[\hat{f}(X;\mathcal{D})] - \hat{f}(X;\mathcal{D})  \right] .
+\end{aligned}
+\end{equation}
+  \item Now we take the expectation of this expression with respect to $\mathcal{D}$ and note that the final term will vanish, giving
+    \begin{equation}\label{tradeoff}\nonumber\small
+    \begin{aligned}
+    &\mathbb{E}_{\mathcal{D}}\left[f(X) - \hat{f}(X;\mathcal{D})\right]^2\\
+    =& \underbrace{\left[f(X) - \mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D}))\right]^2}_{Bias^2} + \underbrace{\mathbb{E}_{\mathcal{D}}\left[\left[\mathbb{E}_{\mathcal{D}}(\hat{f}(X;\mathcal{D})) - \hat{f}(X;\mathcal{D})\right]^2\right]}_{Variance}
+    \end{aligned}
+    \end{equation}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=0.9\textwidth]{figure//BiasVar.pdf}\\
+  %\caption{}\label{}
+\end{figure}
+\begin{itemize}
+   \item \textbf{Bias} refers to the error that is introduced by approximating
+a real-life problem, which may be extremely complicated, by a much
+simpler model.
+  \item \textbf{Variance} refers to the amount by which $\hat{f}$ would change if we
+estimated it using a different training data set. Since the training data
+are used to fit the statistical learning method, different training data sets
+will result in a different $\hat{f}$. But ideally the estimate for $f$ should not vary
+too much between training sets.
+  \item \textbf{Bias and variance trade-off}: The optimal predictive acpability is the one that leads to balance between bias and variance.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=0.9\textwidth]{figure//2_12.pdf}\\
+  \caption{Squared bias (blue curve), variance (orange curve), Var($\epsilon$)
+(dashed line), and test MSE (red curve) for the three data sets in Figures \ref{2_9}-\ref{2_11}.
+The vertical dotted line indicates the flexibility level corresponding to the smallest test MSE.}\label{}
+\end{figure}
+
+\end{frame}
+
+
+
+    				\begin{frame}
+     					\frametitle{Bias-variance tradeoff}
+     					\begin{figure}[h]
+     						\centering
+     						\includegraphics[width=.7\textwidth]{../graphics/ESLFigures/figures2_11.pdf}	 
+     						
+     					\end{figure}	
+     				\end{frame}
+
+%\begin{frame}{}
+%\begin{figure}
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=.6\textwidth]{figure//Schematic_bias_variance.pdf}\\
+%  \caption{\small Schematic of the behavior of bias and variance. The model space
+%is the set of all possible predictions from the model, with the ``closest fit'' labeled
+%with a black dot. The model bias from the truth is shown, along with the variance,
+%indicated by the large yellow circle centered at the black dot labeled ``closest fit in population.'' A shrunken or regularized fit is also shown, having additional
+%estimation bias, but smaller prediction error due to its decreased variance (From Elements of statistical learning by Hastie et al 2009). }\label{}
+%\end{figure}
+%
+%\end{frame}
+
+\begin{frame}{}
+
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=.4\textwidth]{figure//gbox.jpg}\\
+  \caption{George Box: ``Essentially, all models are wrong, but some
+are useful.'' }\label{}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{References}
+\begin{thebibliography}{10}\scriptsize
+
+
+%\beamertemplatearticlebibitems
+%\bibitem{}
+%Efron, B.
+%\newblock Bootstrap methods: Another look at the jackknife.
+%\newblock {\em  The Annals of Statistics}, 7 (1): 1-26. 1979.
+%
+%\bibitem{}
+%Bickel P, Freeman D
+%\newblock Some asymptotic theory for the bootstrap.
+%\newblock {\em Ann Statist}, 9 1196-1217, 1981.
+%%
+%\bibitem{}
+%Rubin D .
+%\newblock The Bayesian bootstrap.
+%\newblock {\em Ann Statist}, 9 130-134. 1981.
+%
+%\bibitem{}
+%Friedman J.
+%\newblock An overview of predictive learning and function approximation.
+%\newblock {\em Springer}, 1994.
+
+\beamertemplatebookbibitems
+\bibitem{}
+Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani
+\newblock An Introduction to Statistical Learning with Applications in R,
+\newblock {\em Springer}, 2013.
+
+\bibitem{}
+Hastie, T., Tibshirani R., Friedman J.
+\newblock The elements of statistical learning, 2nd
+\newblock {\em Springer}, 2009.
+
+\bibitem{}
+Larry Wasserman.
+\newblock All of Statistics. 
+\newblock \url{http://www.stat.cmu.edu/~larry/all-of-statistics/}
+
+%\bibitem{}
+%C. Bishop
+%\newblock Pattern recoginition and Machine learning
+%\newblock {\em  Springer}, 2006.
+%
+%\bibitem[Box and Jenkins, 2008]{box2008time}
+%Box, G.~E. and Jenkins, G.~M. (2008).
+%\newblock {\em Time series analysis: forecasting and control (Fourth Edition)}.
+%\newblock John Wiley \& Sons.
+
+
+\end{thebibliography}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\end{document}
