@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <META http-equiv=Content-Type content="text/html; charset=gb2312">
+   <title>MAFS6010U: AI in Finance </title>
+</head>
+<body background="../../images/crysback.jpg">
+
+<!-- PAGE HEADER -->
+
+<div class="Section1">
+<table border="0" cellpadding="0" width="100%" style="width: 100%;">
+      <tbody>
+        <tr>
+
+       <td style="padding: 0.75pt;" width="80" align="center">
+
+      <p class="MsoNormal">&nbsp;<img width="64" height="64"
+ id="_x0000_i1025"
+ src="../../images/hkust0_starry.jpg" alt="PKU">
+          </p>
+       </td>
+       <td style="padding: 0.75pt;">
+      <p>
+<span style="font-size: 18pt;">
+<b><big>MAFS6010U. Artificial Intelligence in Finance <br>
+   Spring 2019</big></b>
+<br>
+</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="MsoNormal" align="center" style="text-align: center;">
+<hr size="2" width="100%" align="center">  </div>
+
+<ul type="disc">
+
+</ul>
+
+<!-- COURSE INFORMATION BANNER -->
+
+<table border="0" cellpadding="0" width="100%" bgcolor="#990000"
+ style="background: rgb(153,0,0) none repeat scroll 0% 50%; width: 100%;">
+      <tbody>
+
+        <tr>
+       <td style="padding: 2.25pt;">
+      <p class="MsoNormal"><b><span
+ style="font-size: 13.5pt; color: white;">Course Information</span></b></p>
+       </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<!-- COURSE INFORMATION -->
+
+<h3>Synopsis</h3>
+<p style="margin-left: 0.5in;">
+<big> This course explores the basic concepts and underlying principles of artificial intelligence (AI), delving into the fundamentals of machine learning with insights from case studies of relevant technologies. 
+	Allowing for the experimentation of applications of machine learning, this course is designed to encourage students to devise creative ways to put readily-available AI technologies to use to tackle problems 
+	in real life. With a focus on the conceptual understanding of the fundamentals of AI, the purpose of this course is two-fold:
+	<br>
+	<ul>
+	<li> 1. To educate the next generation of innovators of the digital economy, especially in the financial sector;
+	</li>
+	<li> 2. To equip FinTech leaders with the conceptual frameworks and analytical tools for the development and deployment of AI-enabled applications and technologies.
+	</li>
+	</ul>
+	</big>
+<br>
+	<big>
+		<b>Prerequisite</b>: Some preliminary course on (statistical) machine learning, applied statistics, and deep learning will be helpful.
+	</big>
+</p>
+
+
+<h3>Instructors: </h3>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/Resume-Anthony_Woo_2019_01_21.pdf">Anthony Woo</a> [<a href="https://www.dropbox.com/s/mv761isufswff0m/Resume%20-%20Anthony%20Woo.pdf?dl=0"> Resume </a>] </em>
+</big>
+		
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://yao-lab.github.io/">Yuan Yao</a>  </em>
+</big>
+</p>
+
+<h3>Time and Place:</h3>
+<p style="margin-left: 0.5in;">
+<big><em>Friday 19:30-22:20, Academic Bldg Lecture Theatre (LTE), HKUST</em> <br>
+</big>
+<big><em>This term we will be using Piazza for class discussion. The system is highly catered to getting you help fast and efficiently from classmates and myself. 
+	Rather than emailing questions to the teaching staff, I encourage you to post your questions on Piazza. If you have any problems or feedback for the developers, email team@piazza.com. <br>
+Find our class page at: <a href="https://piazza.com/ust.hk/spring2019/mafs6010u/home">https://piazza.com/ust.hk/spring2019/mafs6010u/home</a></em></big> <br>
+</p>
+	
+<h3>Reference (&#21442;&#32771;&#25945;&#26448;)</h3>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+		<em> <a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning, with applications in R (ISLR).</a> By James, Witten, Hastie, and Tibshirani </em>
+
+	</big>
+
+	</p>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+		<em> <a href="https://github.com/JWarmenhoven/ISLR-python/">ISLR-python, By Jordi Warmenhoven</a>. </em>
+
+	</big>
+
+	</p>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+		<em> <a href="https://github.com/mscaudill/IntroStatLearn">ISLR-Python: Labs and Applied, by Matt Caudill</a>. </em>
+
+	</big>
+
+	</p>
+
+	<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://www.manning.com/books/deep-learning-with-python?a_aid=keras&a_bid=76564dff">Manning: Deep Learning with Python</a>, by Francois Chollet</em> [<a href="https://github.com/fchollet/deep-learning-with-python-notebooks">GitHub source in Python 3.6 and Keras 2.0.8</a>]
+</big>
+</p>
+
+	<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://www.deeplearningbook.org/">MIT: Deep Learning</a>, by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+</em>
+</big>
+</p>
+
+	
+
+<h3>Tutorials: preparation for beginners</h3>
+<p style="margin-left: 0.5in;">
+<big>
+	<em><a href="http://cs231n.github.io/python-numpy-tutorial/">Python-Numpy Tutorials</a> by Justin Johnson </em>
+</big>
+</p>
+
+<p style="margin-left: 0.5in;">
+<big>
+	<em><a href="http://scikit-learn.org/stable/tutorial/">scikit-learn Tutorials</a>: An Introduction of Machine Learning in Python</em>
+</big>
+</p>	
+
+<p style="margin-left: 0.5in;">
+<big>
+	<em><a href="http://cs231n.github.io/ipython-tutorial/">Jupyter Notebook Tutorials</a> </em>
+</big>
+</p>
+	
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://pytorch.org/tutorials/">PyTorch Tutorials</a> </em>
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://www.di.ens.fr/~lelarge/dldiy/">Deep Learning: Do-it-yourself with PyTorch</a>, </em> A course at ENS
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://www.tensorflow.org/tutorials/">Tensorflow Tutorials</a></em>
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://mxnet.incubator.apache.org/tutorials/index.html">MXNet Tutorials</a></em>
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://deeplearning.net/software/theano/tutorial/">Theano Tutorials</a></em>
+</big>
+</p>	
+
+
+<p style="margin-left: 0.5in;">
+
+<big>
+
+<em> <a href="http://www-stat.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning (ESL).</a> 2nd Ed. By Hastie, Tibshirani, and Friedman </em>
+
+</big>
+
+</p>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+	<em> <a href="https://github.com/sujitpal/statlearning-notebooks">statlearning-notebooks</a>, by Sujit Pal, Python implementations of the R labs for the <a href="https://lagunita.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about">StatLearning: Statistical Learning</a> online course from Stanford taught by Profs Trevor Hastie and Rob Tibshirani.</em>
+
+	</big>
+
+	</p>
+
+
+<h3>Homework and Projects:</h3>
+
+<p style="margin-left: 0.5in;">
+<big><em> TBA (To Be Announced) </em>
+</big></p>
+
+<h3>Teaching Assistant:</h3>
+
+<p style="margin-left: 0.5in;">
+<big> <br>
+Email: Mr. Yifei Huang <em> aifin.hkust (add "AT gmail DOT com" afterwards) </em>
+	<br>
+	<em> <a href=" https://www.linkedin.com/in/katrinafong/">Ms. Katrina Fong</a> </em>
+</big>
+</p>
+	
+	
+				
+<h3>Schedule</h3>
+
+<table border="1" cellspacing="0">
+<tbody>
+
+<tr>
+<td align="left"><strong>Date</strong></td>
+<td align="left"><strong>Topic</strong></td>
+<td align="left"><strong>Instructor</strong></td>
+<td align="left"><strong>Scriber</strong></td>
+</tr>
+
+<tr>
+<td>01/02/2019, Fri</td>
+<td>Lecture 01: History and Overview of Artificial Intelligence. [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.02.01.pdf"> slides </a>]
+</td>
+<td>A.W. and Y.Y.</td>
+<td></td>
+</tr>
+
+		
+<tr>
+<td>15/02/2018, Fri</td>
+<td>Lecture 02: Introduction to Supervised Learning <a href="slides/Lecture02.pdf">[ YY's slides ]</a>
+	<ul>[ Topic ]
+		<li>Google Experiments: Vision Sensing and Case study: HireVue (Video Analytics for Recruitment)[<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.02.15.pdf"> AW's slides </a>]</li>
+	</ul>
+</td>
+<td>A.W. <br> Y.Y.</td>
+<td></td>
+</tr>
+
+		
+
+<tr>
+<td>02/22/2019, Fri</td>
+<td>Lecture 03: Regression, Classification, Model Assessment and Selection <a href="slides/Lecture03_mafs6010u.pdf">[ YY's slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> <a href="http://www-bcf.usc.edu/~gareth/ISL/"> ISLR, Chapter 3-6. </a>
+	</li>
+	</ul>
+	<ul>[ Topic ]:
+		<li> Katrina Fong's talk [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.02.22.pdf"> AW's slides </a>]
+		</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>03/1/2019, Fri</td>
+<td>Lecture 04: Decision Tree, Random Forests and Boosting <a href="slides/Lecture04_mafs6010u.pdf">[ YY's slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> <a href="http://www-bcf.usc.edu/~gareth/ISL/"> ISLR, Chapter 3-6. </a>
+	</li>
+	</ul>
+	<ul>[ Topic ] 
+		<li> Credit analysis and Mock interview by Katrina [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.03.01.pdf"> AW's slides </a>]</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>03/8/2019, Fri</td>
+<td>Lecture 05: Tutorials 
+	<br>
+	<ul>[Reference]:
+		<li> Yifei HUANG: <a href="slides/Tutorial1MAFS6010U.ipynb"> Tutorial on Machine Learning by Python </a> </li>
+		<li> Yifei HUANG: <a href="slides/Tutorial_for_Server.pdf"> Tutorial on GPU server </a> </li>
+		<li> A dataset used in python tutorial: <a href="okex_future_BTC_USD_this_week_1H.csv"> okex_future_BTC_USD_this_week_1H.csv </a> </li>
+		<li> <a href="https://piazza.com/ust.hk/spring2019/mafs6010u/resources">File links in Piazza >> </a></li>
+	</ul>
+</td>
+<td>Yifei Huang; <br> Katrina Fong;<br> Anthony Woo</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>03/15/2019, Fri</td>
+<td>Lecture 06. Topics in Blockchains
+	<br>
+	<ul>[ Invited Talk ]: <B> Fintech and Blockchain </B>
+		<li> <B>Speaker</B>: <a href="slides/Alex_YANG.pdf">Dr. Alex YANG</a>, CEO, VEE Technology LLC and Dr. Chen NING.
+	</li>
+		<li> <B>Abstract</B>: This is a brief introduction of Blockchain consensus and its current application in Finance, <a href="https://v.systems">V.Systems</a>’ 
+			vision and outlook of Blockchain in Fintech.</li>
+		<li> <B>Bio</B>: Dr Alex Yang is a FinTech entrepreneur/investor with over 14 years of experience in banking and finance. VEE Technology is led by Sunny King, a blockchain legendary developer and creator of Proof-of-Stake consensus. As CEO of VEE Tech, Alex is driving the project to solve the core scalability and stability problems in the development of the blockchain industry. His deep experience of the industry has been gained through his investing activity where he has sponsored many world-leading blockchain foundations.
+<br>
+Prior to his role at VEE, Alex was the founder and CEO of Fund V, one of the first token funds to focus on blockchain companies and related investment opportunities. He was also the founding partner of Beam VC and CyberCarrier Capital which together have successfully invested in over 30 startups in the TMT sector.  Alex is a founding partner of Protoss Global Opportunity Fund, a fixed income hedge fund based in Hong Kong.  
+<br>
+Prior to moving into venture capital investing, Alex was based in Hong Kong as head of APAC structured rates trading at Nomura International, and VP of exotic derivatives trading at UBS.  He started his career as a quantitative developer at Jump Trading in Chicago.
+<br>
+Alex has a PhD from Northwestern University and a BA in Mathematics from Peking University. 
+		</li>
+	</ul>
+	<ul><B> An Introduction to Blockchains</B>: [ <a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.03.15.pdf"> AW's slides </a>]
+	</ul>
+</td>
+<td>A.W. <br> Y.Y.</td>
+<td></td>
+</tr>
+
+<td>03/22/2019, Fri</td>
+<td>Lecture 07: An Introduction to Neural Networks and Deep Learning </a>  
+	<br>
+	<ul>[Reference]:
+		<li> [<a href="slides/Lecture05_DeepLearning-A.pdf"> slides-A </a>] </li>
+		<li> [<a href="slides/Lecture05_DeepLearning-B.pdf"> slides-B </a>] </li>
+	</ul>
+	<ul>[ Invited Talk ]
+		<li> Speaker: <a href="slides/Dr%Jeffrey%Hui%-%Profile%-%English%-%2019-04.pdf"> Dr. Jeffrey Hui </a>
+		<li> Title: Igniting the i-Marketing Revolution - 5 KEY Digital and Social Media Trends in 2019+ [<a href="slides/Top%i-Marketing%Trends-Jeffrey-2019%(V2)-HKUST-OP.pdf"> slides </a>]
+	</ul>	
+</td>
+<td>A.W. <br>Y.Y.</td>
+<td></td>
+</tr>
+
+<td>03/29/2019, Fri</td>
+<td>Lecture 08: An Introduction to Recurrent Neural Networks (RNN) and Long Short Term Memory (LSTM) </a>  
+	<br>
+	<ul>[Reference]:
+		<li> [<a href="slides/Lecture06_RNN-LSTM.pdf"> slides </a>] </li>
+	</ul>
+	<ul>[ Topic ]
+		<li> Google Image Recognition. Case study: SenseTime (Computer Vision) [<a href="slides/HKUST%-%AI%in%Finance%-%2019.03.29.pdf"> slides </a>]
+	</ul>
+</td>
+<td>A.W. <br> Y.Y.</td>
+<td></td>
+</tr>
+
+<td>04/12/2019, Fri</td>
+<td>Lecture 09: An Introduction to Reinforcement Learning [<a href="slides/Lecture07_Reinforcement.pdf"> YY's slides </a>]  
+	<br>
+	<ul>[ Topic ]:
+		<li> Competition of Cryptocurrency Trading with Deep Learning, by DE LAVERGNE Cyril [<a href="slides/Lecture07b_Cyril.pdf"> slides </a>] </li>
+		<li> Introduction to Deep Reinforcement Learning Trading, by HUANG Yifei [<a href="slides/Lecture07c_rl_trading.pdf"> slides </a>] </li>
+	</ul>
+	<ul>[ Reference ]:
+		<li> Cyril's training dataset and demos [<a href="https://drive.google.com/drive/folders/1jBqUZgipKoATfdIlbDCTqY5nb7m3ewIw"> link </a>] </li>
+		<li> Ceruleanacg's GitHub Repo for <a href="https://github.com/Ceruleanacg/Personae/blob/master/README.md"> Reinforcement Learning and Supervized Learning Methods and Envs For Quantitative Trading </a> </li>
+	</ul>
+</td>
+<td>Cyril DE LAVERGNE <br> Y.Y.</td>
+<td></td>
+</tr>
+
+<td>04/26/2019, Fri</td>
+<td>Lecture 10: An Introduction to Unsupervised Learning: PCA, AutoEncoder, VAE, and GANs </a>  
+	<br>
+	<ul>[Reference]:
+		<li> [<a href="slides/Lecture08_Generative.pdf"> YY's slides </a>] </li> 
+		<li> [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.04.26.pdf"> AW's slides </a>] </li>
+	</ul>
+</td>
+<td>A.W. <br> Y.Y.</td>
+<td></td>
+</tr>
+
+<td>05/03/2019, Fri</td>
+<td>Seminar: Investment Trends and FinTech Outlook  </a>  
+	<br>
+	<ul>[ Invited Talk ]:
+		<li> <B> Focus </B>: Sales and Trading Business in Global Investment Banks – Ripe for Disruption by AI?
+		<li> <B> Speaker: </B> Mr. Christopher Lee </li>
+		<li> <B> Biography: </B> 
+			Mr. Chris Lee is a partner at FAA Investments and a board director with expertise in financial markets, risk management, governance and leadership development. Currently, he serves as an Independent Board Member with Matthews Asia Funds (AUM: US$30.2 billion), the largest US investment company with a focus on Asia Pacific markets and Asian Masters Fund, an investment company listed in Australia.
+
+Previously, Chris was an investment banker for 18 years, acting as Managing Director and divisional and regional heads at Deutsche Bank AG, UBS Investment Bank and Bank of America Merrill Lynch. He worked in global capital markets, managed derivative products, and provided equity sales and trading functions to institutional investors.
+
+Academically, Chris is an associate professor of science practice at HKUST and teaches financial mathematics and risk management courses. He completed the AMP at Harvard University and holds a BS in Mechanical Engineering and an MBA from U.C. Berkeley.
+
+<br> Bloomberg Profile: [<a href="https://www.bloomberg.com/research/stocks/private/person.asp?personId=282763969&privcapId=43605455"> link </a>]</li>
+	</ul>
+</td>
+<td>Chris Lee <br> A.W.</td>
+<td></td>
+</tr>
+
+<td>05/10/2019, Fri</td>
+<td>Lecture 12: Tutorial on deep learning in Python </a>  
+	<br>
+	<ul>[Reference]:
+		<li> [<a href="slides/Tutorial2-MAFS6010U.ipynb"> Python Notebook </a>] </li>
+	</ul>
+</td>
+<td>Yifei Huang</td>
+<td></td>
+</tr>
+
+
+<td>05/17/2019, Fri</td>
+<td>Lecture 13: Final </a>  
+	<br>
+	<ul>[Reference]:
+		<li> [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.05.17.pdf"> slides </a>] </li>
+		<li> [<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/project/%5BFinalAssignment%5D.pdf"> Final Assignment </a>] </li>
+	</ul>
+<ul> [ Final Reports ]:
+	<li> Ruiting CHEN, Di CHENG, Yang XUE, Yifan YE, Mengkai ZHANG (Group Hawk). AI in Finance Final Report. [<a href="project/Hawk_report.pdf"> Report </a>][<a href="project/Hawk_slides.pptx"> Slides (pptx) </a>][<a href="https://youtu.be/dnuZeVYy988"> Presentation </a>][<a href="https://github.com/gigondor/HKUST-MAFS-6010U-HAWK"> GitHub </a>]</li>
+	<li> Paul M.Y. FUNG, Alex C.Y. Leung, Alan W.M. Ng, Billy C.H. Wan, Ivan T.H. Yim (Group Hongkies). Bitcoin Trading Strategies Using News and Tweets with Sentiment Analysis (Option A). [<a href="project/Hongkies_report.pdf"> Report </a>][<a href="project/Hongkies_slides.pptx"> Slides (pptx) </a>][<a href="project/Hongkies_source.rar"> Source (.rar) </a>][<a href="https://www.youtube.com/watch?v=UW6U1Rh5pLo"> Presentation </a>]</li>
+	<li> HOU Jie, QIAN Jing, YANG Yu, KE Chenji, SONG Chu. Final Report For MAFS 6010U From Project Sweetie. [<a href="project/Hou-Qian-Song-Ke-Yang_report.pdf"> Report </a>][<a href="project/Hou-Qian-Yang-Ke-Song_slides.pdf"> Slides </a>][<a href="https://youtu.be/hIQGZgPIPT0"> Presentation (youtube) </a>]</li>
+	<li> HU Xinlin, YU Lifang, Xinyu Wang, Ziwei Yuan, Haohua Chen (Group Skyfall). Data Analysis in SenseTime. [<a href="project/Skyfall_report.pdf"> Report </a>][<a href="project/Skyfall_slides.ppt"> Slides (ppt) </a>][<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/tree/master/project/Skyfall_source/"> Source </a>][<a href="https://www.youtube.com/watch?v=MVDya0hnUic"> Presentation (youtube) </a>]</li>
+	<li> HUA Neng, CHENG Yu, WANG Xuan, BI Huarui, WANG Sunan (Group Forget101). [<a href="project/Forget101_report.pdf"> Report </a>][<a href="project/Forget101_slides.pptx"> Slides (pptx) </a>][<a href="https://drive.google.com/file/d/1s9iaS3WI3gqdsGDMg4-gcuxOtWgKjmC2/view?usp=sharing"> Source (Google drive) </a>][<a href="https://youtu.be/TVssGC-RrK0"> Presentation (youtube) </a>]</li>
+	<li> KU, Taekyun. [<a href="project/KU_Taekyun_report.docx"> Report (docx) </a>][<a href="project/KU_Taekyun_slides.pptx"> Slides (pptx) </a>][<a href="https://youtu.be/XaFlGkJE9Xo"> Presentation (youtube) </a>]</li>
+	<li> LAM, Hui Fung; SHEN, Kairan; WANG, Chenghui; WU, Shukun; XIAO, Yuxiang (Group HappyAImen). [<a href="project/HappyAImen_report.pdf"> Report </a>][<a href="project/HappyAImen_slides.ppt"> Slides (ppt) </a>][<a href="project/HappyAImen_Video&Code.docx"> Source (.docx) </a>][<a href="https://youtu.be/jCfjw5mM7Go"> Presentation (youtube) </a>]</li>
+	<li> LI Huiwen, FENG Yuan, ZHOU Yunzhi, ZHAO Jingru, LEI Qiuyue. A Study of Company -- Sense Time. [<a href="project/Li-Feng-Zhou-Zhao-Lei_report.pdf"> Report </a>][<a href="project/Li-Feng-Zhou-Zhao-Lei_slides.pptx"> Slides (pptx) </a>][<a href="https://www.youtube.com/watch?v=Kx5SCISWnys&feature=youtu.be"> Presentation (youtube) </a>]</li> 
+	<li> LI Xianda; WU Jiaquan; YAN Ke; YU Yipeng; ZHAO Siheng. Employees’ Education Information Scraping and Analysis Based on AI. [<a href="project/Li-Wu-Yan-Yu-Zhao_report.pdf"> Report </a>][<a href="project/Li-Wu-Yan-Yu-Zhao_source/"> source </a>][<a href="https://youtu.be/tcdKPgRoMcU"> Presentation (youtube) </a>]</li>
+	<li> LI Ye, GAO Jianyu, TIAN Lei, CHEN Shuying, XU Liyuan (Team Orange). [<a href="project/Orange_report.pdf"> Report </a>][<a href="project/Orange_slides.pptx"> Slides (pptx) </a>][<a href="project/Orange_source/"> source </a>][<a href="https://youtu.be/YX6w84rOWXk"> Presentation (youtube) </a>]</li> 
+	<li> LI, Zhuxuan and HE, Yuhang. Analysis on Codecademy -- A company focusing on providing online AI related education (Option A). [<a href="project/LI_Zhuxuan-HE_Yuhang-Report.pdf"> Report </a>][<a href="project/LI_Zhuxuan-HE_Yuhang_slides.pptx"> Slides (pptx) </a>][<a href="https://youtu.be/rum4qau7jW8"> Presentation (youtube) </a>]</li>
+	<li> LIU Yifei, JIANG Zhining, WAN Jing, ZHANG Lingxi, ZHANG Yuxin. AI Learning Report. [<a href="project/EZ_report.pdf"> Report </a>][<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/tree/master/project/EZ_source/"> Source </a>][<a href="https://youtu.be/OjumRLnY-_M"> Presentation (youtube) </a>] </li>
+	<li> LIU Yuchen, MA Huanyu, SUN Zhuo, ZHENG Hanshen. Artificial Intelligence in Financial Service Industry. [<a href="project/Liu-Ma-Sun-Zheng_report.pdf"> report </a>][<a href="https://youtu.be/oLHO7rQMSTw"> Presentation (youtube) </a>] </li>
+	<li> SHEN, Lue. Building Chinese Chat Bot with Controlled Sentence Function (Option A). [<a href="project/SHEN_Lue_report.pdf"> Report </a>] [<a href="project/SHEN_Lue_slides.pdf"> Slides </a>][<a href="https://github.com/aifin-hkust/SentenceFunction"> Github Source </a>][<a href="https://drive.google.com/file/d/1LrszFVHk9XxY_u2xnA0hSLmQz1DacL41/view?usp=sharing"> Presentation (Google Drive) </a>][<a href="https://youtu.be/OL8BFajM2K4"> Presentation (youtube) </a>] </li>
+	<li> PAN, Jiayi. Trading cryptocurrencies with LSTM and refection on the LSTM journal (Option A). [<a href="project/PAN_Jiayi_report.pdf"> Report </a>][<a href="https://hkustconnect-my.sharepoint.com/:u:/g/personal/jpanak_connect_ust_hk/EZJurUYLdBFDi8f1OkoBojUBpP9FChhzdE9MG3CiaUTSpw?e=6pZ90x"> One Drive Link: Submission_LSTM_PJY.zip </a>][<a href="https://youtu.be/ufY7f8fc5hU"> Presentation (youtube) </a>]</li>
+	<li> ZHANG Banruo, QIU Chuchu, LI Lu, TANG Mandi, ZHOU Yawen (Group Gesha). [<a href="project/Gesha_report.pdf"> Report </a>][<a href="project/Gesha_slides.pptx"> Slides (pptx) </a>][<a href="https://youtu.be/9HJrNCCTprw"> Presentation (youtube) </a>]</li>
+	<li> ZHANG Jian, Jianmei WU, Baohui HUANG, Qianying ZHANG, Yangshanhui YUE (Project Pharaoh). AI Private Equity Investment: Entrepreneurship Profession Assessment Research. [<a href="project/Pharaoh_report.pdf"> Report </a>][<a href="project/Pharaoh_slides.pptx"> Slides (pptx) </a>][<a href="https://youtu.be/PonFqin7U3k"> Presentation (youtube) </a>]</li>
+</ul>
+</td>
+<td>A.W.</td>
+<td></td>
+</tr>
+	<!---
+	<tr>
+
+
+	<tr>
+<td>09/19/2018, Wed</td>
+<td>Lecture 05: Harmonic Analysis of Convolutional Networks: Wavelet Scattering Net <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture05_scattering.pdf">[ slides ]</a> 
+	<br>
+	<ul>[Reference]:
+	<li> Stephane Mallat, <a href="https://www.di.ens.fr/~mallat/papiers/ScatCPAM.pdf">Group Invariant Scattering</a>, Communications on Pure and Applied Mathematics, Vol. LXV, 1331–1398 (2012) </li>
+	<li> Joan Bruna and Stephane Mallat, <a href="http://www.cmapx.polytechnique.fr/~bruna/Publications_files/pami.pdf">Invariant Scattering Convolution Networks</a>, IEEE Transactions on Pattern Analysis and Machine Intelligence, 2012 </li>
+	</ul>
+	<ul> [Public codes]:
+		<li> <a href="http://www.di.ens.fr/data/software/"> Scattering Net Matlab codes </a> </li>
+		<li> <a href="https://github.com/edouardoyallon/pyscatwave"> pyscatwave: Scattering Transform in Python </a> </li>
+		<li> <a href="https://github.com/tdeboissiere/DeepLearningImplementations/tree/master/ScatteringTransform"> Deep Hybrid Transform in Python </a> </li>
+	</ul>	
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+	<tr>
+<td>09/24/2018, Mon</td>
+<td>Lecture 06: Harmonic Analysis of Convolutional Networks: Extension of Scattering Nets <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture06_extension.pdf">[ slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> Thomas Wiatowski and Helmut Bolcskei, <a href="https://www.nari.ee.ethz.ch/commth//pubs/files/deep-2016.pdf">A Mathematical Theory of Deep Convolutional Neural Networks for Feature Extraction</a>, 2016.
+		</li>		
+		<li> Qiang Qiu, Xiuyuan Cheng, Robert Calderbank, Guillermo Sapiro, <a href="https://arxiv.org/abs/1802.04145">DCFNet: Deep Neural Network with Decomposed Convolutional Filters</a>, ICML 2018. arXiv:1802.04145.
+		</li>	
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+	<tr>
+<td>09/26/2018, Wed</td>
+<td>Lecture 07: Convolutional Neural Network with Structured Filters  <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture07_Xiuyuan.pdf">[ slides ]</a> 
+	<br>
+	<ul>[Abstract]:
+		<li> In this lecture I'll introduce a recent work by <a href="https://services.math.duke.edu/~xiuyuanc/">Prof. Xiuyuan CHENG</a> et al. in Duke University. </li>
+		<li> Filters in a Convolutional Neural Network (CNN) contain model parameters learned from enormous amounts of data. 
+			The properties of convolutional filters in a trained network directly affect the quality of the data representation 
+			being produced. In this talk, we introduce a framework for decomposing convolutional filters over a truncated expansion 
+			under pre-fixed bases, where the expansion coefficients are learned from data. Such a structure not only reduces the number 
+			of trainable parameters and computation load but also explicitly imposes filter regularity by bases truncation. Apart from 
+			maintaining prediction accuracy across image classification datasets, the decomposed-filter CNN also produces a stable 
+			representation with respect to input variations, which is proved under generic assumptions on the bases expansion. 
+			Joint work with Qiang Qiu, Robert Calderbank, and Guillermo Sapiro.</li>
+	</ul>
+	<ul>[Reference]:
+		<li> Qiang Qiu, Xiuyuan Cheng, Robert Calderbank, Guillermo Sapiro, <a href="https://arxiv.org/abs/1802.04145">DCFNet: Deep Neural Network with Decomposed Convolutional Filters</a>, ICML 2018. arXiv:1802.04145.
+		</li>
+		<li> Xiuyuan Cheng, Qiang Qiu, Robert Calderbank, Guillermo Sapiro. <a href="https://arxiv.org/abs/1805.06846">RotDCF: Decomposition of Convolutional Filters for Rotation-Equivariant Deep Networks</a>, 2018. arXiv:1805.06846.
+	</ul>
+	<ul>[Project 1]:
+		<li> <a href="https://github.com/deeplearning-math/slides/blob/master/project1.pdf">Assignment</a> </li>
+		<li> <a href="https://github.com/silkylove/deeplearning-math.github.io-6380P-fall-2018-/tree/master/Project1">Reports at GitHub</a> </li>
+		<li> <a href="https://doodle.com/poll/q4mpv7u3mi8wtrqq">Doodle Votes</a>: please vote your favorite 5 or less reports, NOT including your own.</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>10/03/2018, Wed</td>
+<td>Lecture 8: Student Seminars on Project 1 
+	<br>
+<ul>[Team]: DENG Yizhe, HUANG Yifei, SUN Jiaze, TAN Haiyi
+	<li> Title: Real or fake? A Comparison Between Scattering Network & Resnet-18 <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture08a_Project1_SUN,Jiaze.pptx">[ slides ]</a>. 
+</ul>
+<ul>[Team]: YIN, Kejing (Jake) and QIAN, Dong
+	<li> Title: Feature Extraction and Transfer Learning <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture08b_Project1_YinQian.pdf">[ slides ]</a>.
+	</li>
+</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+	
+<tr>
+<td>10/08/2018, Mon</td>
+<td>Lecture 9: Student Seminars on Project 1 
+	<br>
+<ul>[Team]: Bhutta, Zheng, Lan (Group 6)
+	<li> Title: Raphael painting analysis: Random cropping leading to high variance <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture09a_Project1_group6.pptx">[ slides ]</a>. 
+</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+	
+<tr>
+<td>10/10/2018, Wed</td>
+<td>Lecture 10: Sparsity in Convolutional Neural Networks  <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture10_sparsity.pdf">[ slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> Jeremias Sulam, Vardan Papyan, Yaniv Romano, and Michael Elad. Multi-Layer Convolutional Sparse Modeling:
+Pursuit and Dictionary Learning, IEEE Transactions on Signal Processing, vol. 66, no. 15, pp. 4090-4104, 2018. <a href="https://arxiv.org/abs/1708.08705.pdf">arXiv:1708.08705</a>.
+		</li>
+		<li> Vardan Papyan, Yaniv Romano, and Michael Elad. Working Locally Thinking Globally: Theoretical Guarantees for Convolutional Sparse Coding, IEEE Transactions on Signal Processing, vol. 65, no. 21, pp. 5687-5701, 2018. <a href="https://arxiv.org/abs/1707.06066">arXiv:1707.06066</a>.
+		</li>
+		<li> Vardan Papyan, Yaniv Romano, and Michael Elad. Convolutional Neural Networks Analyzed via Convolutional Sparse Coding, Journal of Machine Learning Research, 18:1-52, 2017. <a href="https://arxiv.org/abs/1607.08194">arXiv:1607.08194</a>.
+		</li>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>10/15/2018, Mon</td>
+<td>Lecture 11: Seminar: Exponentially Weighted Imitation Learning for Batched Historical Data. 
+	<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture11a_WangNIPS18.pdf">[ slides ]</a>
+	<br>
+	<ul>[Speaker]: WANG, Qing, Tecent AI Lab.
+	</ul>
+	<ul>[Abstract]:
+		<li> We consider deep policy learning with only batched historical trajectories. 
+			The main challenge of this problem is that the learner no longer has a simulator or “environment 
+			oracle” as in most reinforcement learning settings. To solve this problem, we propose a monotonic 
+			advantage reweighted imitation learning strategy that is applicable to problems with complex 
+			nonlinear function approximation and works well with hybrid (discrete and continuous) action space. 
+			The method does not rely on the knowledge of the behavior policy, thus can be used to learn from 
+			data generated by an unknown policy. Under mild conditions, our algorithm, though surprisingly 
+			simple, has a policy improvement bound and outperforms most competing methods empirically. Thorough 
+			numerical results are also provided to demonstrate the efficacy of the proposed methodology.
+			
+			This is a joint work with Jiechao Xiong, Lei Han, Peng Sun, Han Liu, and Tong Zhang.
+		</li>
+	</ul>
+	<ul>[Team]: Huangshi Tian, Beijing Fang, Yunfei Yang (Group 3)
+		<li> Title: An In-Depth Look at Feature Transformation Ability of CNN 
+			<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture11b_Project1_Group3.pdf">[ slides ]</a>. 
+		</li>
+	</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+
+	
+	<tr>
+<td>10/22/2018, Mon</td>
+<td>Lecture 12: Implicit Regularization in Gradient Descent <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture12.pdf">[ slides ]</a>
+	<br>
+	<ul>[Reference]:
+		<li> Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals,
+			Understanding deep learning requires rethinking generalization. ICLR 2017. <a href="https://arxiv.org/abs/1611.03530">[ arXiv:1611.03530 ]</a>
+			<a href="https://github.com/pluskid/fitting-random-labels">[Chiyuan Zhang's codes]</a> 
+		</li>
+		<li> Peter L. Bartlett, Dylan J. Foster, Matus Telgarsky. Spectrally-normalized margin bounds for neural networks. 
+		 	<a href="https://arxiv.org/abs/1706.08498">[ arXiv:1706.08498 ]</a>. 
+		</li>
+		<li> Daniel Soudry, Elad Hoffer, Mor Shpigel Nacson, Suriya Gunasekar, Nathan Srebro. The Implicit Bias of Gradient Descent on Separable Data. 
+			<a href="https://arxiv.org/abs/1710.10345">[ arXiv:1710.10345 ]</a> 
+		</li>
+		<li> Poggio, T, Liao, Q, Miranda, B, Rosasco, L, Boix, X, Hidary, J, Mhaskar, H. Theory of Deep Learning III: explaining the non-overfitting puzzle. 
+			<a href="http://cbmm.mit.edu/sites/default/files/publications/CBMM-Memo-073v3.pdf">[ MIT CBMM Memo-73, 1/30/2018 ]</a>. 
+		</li>
+		<li> Liao, Q., Miranda, B., Hidary, J., and Poggio, T. Classical generalization bounds are surprisingly tight for Deep Networks. MIT CBMM Memo-91. 
+			<a href="https://arxiv.org/abs/1807.09659">[arXiv:1807.09659]</a>
+		</li>
+		<li> Zhu, Weizhi, Yifei Huang, and Yuan YAO. On Breiman's Dilemma in Neural Networks: Phase Transitions of Margin Dynamics. 
+			<a href="https://arxiv.org/abs/1810.03389">[arXiv:1810.03389]</a>
+		</li>
+		<li> Yuan Yao, Lorenzo Rosasco and Andrea Caponnetto, 
+		<a href="https://link.springer.com/article/10.1007/s00365-006-0663-2">On Early Stopping in Gradient Descent Learning</a>, Constructive Approximation, 2007, 26 (2): 289-315. 
+		</li>
+		<li> Tong Zhang and Bin Yu. Boosting with Early Stopping: Convergence and Consistency. Annals of Statistics, 2005, 33(4): 1538-1579. 
+ 			<a href="https://arxiv.org/pdf/math/0508276.pdf">[ arXiv:0508276 ]</a>. 
+		</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>10/24/2018, Wed </td>
+<td>Lecture 13: Seminar 
+	<br>
+	<ul>[Speaker]: Baoyuan WU, Tencent AI Lab
+	</ul>
+	<ul>[Abstract]: In this talk, I will introduce three topics if time permitted.
+		<li> <b> Topic 1: Tencent ML-Images: large-scale visual representation learning.</b> [<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture13a-BaoyuanWu_Tencent_ML_Images.pptx"> slides (.pptx) </a>] 
+			The success of deep learning strongly depends on large-scale high-quality training data. Tencent ML-Images is an important open-source project, and it publishes a large-scale multi-label image database (including 18M images and 11K categories), the checkpoints with excellent capability of visual representation (80.73% top-1 accuracy on the validation set of ImageNet), as well as the complete codes. In this talk, I will introduce the construction of ML-Images and its main characteristics, the training of deep neural networks using large-scale image database, the transfer learning to single-label image classification on ImageNet, the feature extraction and image classification using the trained checkpoint. This project tries to give you a clear picture of the complete process of visual presentation learning based on deep neural networks. 
+Project address: <a href="https://github.com/Tencent/tencent-ml-images">https://github.com/Tencent/tencent-ml-images</a> 
+		</li>
+		<li> <b> Topic 2: Lp-Box ADMM: a versatile framework for integer programming. </b> [<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture13b-BaoyuanWu_Lp_box_ADMM_slides_global_convergence-brief.pptx"> slides (.pptx) </a>]
+			In this talk, we revisit the integer programming (IP) problem, which plays a fundamental role in many computer vision and machine learning applications. We propose a novel and versatile framework called Lp-box ADMM, which is based on two main ideas. (1) The discrete constraint is equivalently replaced by the intersection of a box and the Lp-ball. (2) We infuse this equivalence into the ADMM (Alternating Direction Method of Multipliers) framework to handle these continuous constraints separately and to harness its attractive properties. The proposed algorithm is theoretically guaranteed to converge to the epsilon-stationary point. We demonstrate the applicability of Lp-box ADMM on four important applications: MRF energy minimization, graph matching, clustering and model compression of convolutional neural networks. Results show that it outperforms generic IP solvers both in runtime and objective. It also achieves very competitive performance when compared to state-of-the-art methods that are specifically designed for these applications.
+			<a href="https://ieeexplore.ieee.org/document/8378001/">[ preprint ]</a> 
+		</li>
+		<li> <b> Topic 3: Multimedia AI: A brief introduction of researches and applications of Tencent AI Lab. </b>
+			Tencent AI Lab was established in Shenzhen in 2016 as a company-level strategic initiative and focuses on advancing fundamental and applied AI research. The research fields include computer vision, speech recognition, natural language processing and machine learning. The technologies of AI Lab have been applied in more than 100 Tencent products, including WeChat, QQ and news app Tian Tian Kuai Bao. In this talk, I will give a brief introduction of the researches about multimedia AI, 
+			including AI + image, video, audio and text, ranging from modeling, analysis, understanding to generation, etc. 
+			<a href="https://ai.tencent.com/ailab/">https://ai.tencent.com/ailab/</a>
+		</li>
+	</ul>
+	<ul>[Bio]: Baoyuan Wu is currently a Senior Research Scientist in Tencent AI Lab. He was Postdoc in IVUL lab at KAUST, working with Prof. Bernard Ghanem, from August 2014 to November 2016.  He received the PhD degree from the National Laboratory of Pattern Recognition, Chinese Academy of Sciences (CASIA) in 2014, supervised by Prof. Baogang Hu. His research interests are machine learning and computer vision, including probabilistic graphical models, structured output learning, multi-label learning and integer programming. His work has been published in TPAMI, IJCV, CVPR, ICCV, ECCV and AAAI, etc.
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>10/29/2018, Mon</td>
+	<td>Lecture 14: Variational Inference and Deep Learning. [<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture14_YangC_VAE.pdf"> slides </a>]
+	<br>
+</td>
+<td>Prof. Can YANG</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>10/31/2018, Wed</td>
+<td> Lecture 15: Phase Transitions of Margin Dynamics [<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture15_ZhuWZ_Phase.pdf"> slides </a>] and Project 2 [<a href="https://github.com/deeplearning-math/slides/blob/master/project2.pdf"> Assignment </a>]
+	<br>
+	<ul>[Reference]:
+		<li> ZHU, Weizhi, Yifei HUANG, and Yuan YAO. 
+			On Breiman's Dilemma in Neural Networks: Phase Transitions of Margin Dynamics. <a href="https://arxiv.org/abs/1810.03389">[ arXiv:1810.03389 ]</a>
+		</li>
+	</ul>
+	<ul>[Project 2]:
+		<li> <a href="https://github.com/deeplearning-math/slides/blob/master/project2.pdf"> Assignment </a> </li>
+		<li> <a href="https://www.kaggle.com/c/semi-conductor-image-classification-1"> Kaggle inclass contest </a> </li>
+		<li> <a href="https://github.com/silkylove/deeplearning-math.github.io-6380P-fall-2018-/tree/master/Project2">Reports at GitHub</a> </li> 
+		<li> <a href="https://doodle.com/poll/xdaf95rihdmbnnbg">Doodle Votes</a>: please vote your favorite 5 or less reports, NOT including your own.</li>
+	</ul>
+</td>
+<td>ZHU, Weizhi</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>11/05/2018, Mon</td>
+	<td>Lecture 16: Generative Models and Variational Autoencoders. [<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture16_generative.pdf"> slides </a>]
+	<br>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>11/07/2018, Wed</td>
+<td>Lecture 17: Generative Adversarial Networks. <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture17_GAN.pdf">[ pdf ]</a>.
+	<br>
+	<ul>[Reference]
+		<li> Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio. Generative Adversarial Networks. 
+			<a href="https://arxiv.org/abs/1406.2661">[ arXiv:1406.2661 ]</a> 
+		</li>
+		<li> Martin Arjovsky, Soumith Chintala, Léon Bottou. Wasserstein GAN.
+			<a href="https://arxiv.org/abs/1701.07875">[ arXiv:1701.07875 ]</a>
+		</li>
+		<li> Rie Johnson, Tong Zhang, Composite Functional Gradient Learning of Generative Adversarial Models. <a href="https://arxiv.org/abs/1801.06309">[ arXiv:1801.06309 ]</a></li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+	<tr>
+<td>11/12/2018, Mon</td>
+	<td>Lecture 18: A Walk Through Non-Convex Optimization Methods: <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture18_Junchi_PCA.pdf">[ A: Online PCA ]</a>
+		<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture18_Junchi_SPIDER.pdf">[ B: SPIDER ]</a>
+	<br>
+		<ul>[ Speaker ] Dr. Junchi Li, Tecent AI Lab and Princeton University
+		</ul>
+		<ul>[ Abstract ] In this talk, I will discuss briefly the theoretical advances of non-convex optimization methods stemmed from machine learning practice.
+I will begin with (perhaps the simplest) PCA model and show that scalable algorithms can achieve a rate that matches minimax information lower bound.
+Then, I will discuss scalable algorithms that escape from saddle points, the importance of noise therein, and how to achieve a $\cO(\varepsilon^{-3})$ convergence rate for finding an $(\varepsilon,\cO(\varepsilon^{0.5}))$-approximate second-order stationary point.
+If time permits, I will further introduce a very recent ``Lifted Neural Networks'' method that is non-gradient-based and serves as a powerful alternative for training feed-forward deep neural networks.
+		</ul>
+		<ul>[ Bio ] Dr. Junchi Li obtained his B.S. in Mathematics and Applied Mathematics at Peking University in 2009, and his Ph.D. in Mathematics at Duke University in 2014. He has since held several research positions, including the role of visiting postdoctoral research associate at Department of Operations Research and Financial Engineering, Princeton University. His research interests include statistical machine learning and optimization, scalable online algorithms for big data analytics, and stochastic dynamics on graphs and social networks. He has published original research articles in both top optimization journals and top machine learning conferences, including an oral presentation paper (1.23%) at NIPS 2017 and a spotlight paper (4.08%) at NIPS 2018.
+		</ul>
+		<ul>[ Reference ]
+			<li> Junchi Li, Mengdi Wang, Han Liu, and Tong Zhang.
+Near-Optimal Stochastic Approximation for Online Principal Component Estimation.
+				Mathematical Programming 2018. [<a href="https://arxiv.org/abs/1603.05305"> arXiv:1603.05305 </a>] </li>
+<li>
+Dan Garber, Elad Hazan, Chi Jin, Sham M. Kakade, Cameron Musco, and Praneeth Netrapalli. 
+Faster Eigenvector Computation via Shift-and-Invert Preconditioning.
+	ICML 2016 </li>
+<li>
+Rong Ge, Furong Huang, Chi Jin, and Yuan Yang.
+Escaping from Saddle Points.
+	COLT 2015 </li>
+<li> 
+Jason Lee, Max Simchowitz, Michael Jordan, and Ben Recht.
+Gradient Descent Only Converges to Minimizers.
+	COLT 2016 </li>
+<li>
+Zeyuan Allen-Zhu, and Yuanzhi Li.
+NEON2.
+	NIPS 2018 </li>
+<li>
+Cong Fang, Junchi Li, Zhouchen Lin, and Tong Zhang.
+SPIDER: Near-Optimal Non-Convex Optimization via Stochastic Path Integrated Differential Estimator.
+	NIPS 2018. [<a href="https://arxiv.org/abs/1807.01695"> arXiv:1807.01695 </a>] </li>
+<li>
+Jia Li, Cong Fang, and Zhouchen Lin.
+Lifted Proximal Operator Machines.
+	AAAI 2018 </li>
+<li>
+Armin Askari, Geoffrey Negiar, Rajiv Sambharya, Laurent El Ghaoui.
+Lifted Neural Networks.
+	<a href="https://arxiv.org/abs/1805.01532">arXiv:1805.01532</a> </li>
+<li>Fangda Gu, Armin Askari, Laurent El Ghaoui. 
+	Fenchel Lifted Networks: A Lagrange Relaxation of Neural Network Training.
+	<a href="https://arxiv.org/abs/1811.08039"> arXiv:1811.08039</a>
+			</li>
+		</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>11/14/2018, Wed</td>
+<td>Lecture 19: Robust Estimation and Generative Adversarial Networks. <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture19_robustGANa.pdf">[ part A ]</a> <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture19_robustGANb.pdf">[ part B ]</a>.
+	<br>
+	<ul>[Reference]
+		<li> GAO, Chao, Jiyu LIU, Yuan YAO, and Weizhi ZHU.
+			Robust Estimation and Generative Adversarial Nets. 
+			<a href="https://arxiv.org/abs/1810.02030">[ arXiv:1810.02030 ]</a> 
+		</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>11/19/2018, Mon</td>
+	<td>Lecture 20: Seminars 
+	<br>
+	<ul>[ Group 8 ]: Andrea Madotto, Genta Indra Winata, Zhaojiang Lin, and Jamin Shin. <I> Nexperia Challenge</I>.
+		<li> <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture20a_Project2_CAiRE.pdf">[ slides in pdf ]</a>. 
+		<li> <a href="https://github.com/silkylove/deeplearning-math.github.io-6380P-fall-2018-/tree/master/Project2/8.ShinMadottoLinWinata">[ report ]</a></li>
+		</ul> 
+	<ul>[ Group 2 ]: Zhicong LIANG, Zhichao HUANG, and Ruixue WEN. <I> Experiments on DCFNet </I>.
+		<li> <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture20b_Project2_Liang.pptx">[ slides in pptx ]</a>. 
+		<li> <a href="https://github.com/silkylove/deeplearning-math.github.io-6380P-fall-2018-/blob/master/Project2/2.HuangWenLiang/project-2.pdf">[ report ]</a></li>
+		</ul> 
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>11/21/2018, Wed</td>
+<td>Lecture 21: Machine (Deep) Learning Problems in Cryo-EM. <a href="https://github.com/deeplearning-math/slides/blob/master/Lecture21_cryo-em.pdf">[ slides ]</a>.
+	<br>
+	<ul>[Reference]
+		<li> Yin Xian, Hanlin Gu, Wei Wang, Xuhui Huang, Yuan Yao, Yang Wang, Jian-Feng Cai. Data-Driven Tight Frame for Cryo-EM Image Denoising and Conformational Classification. 
+The 6th IEEE Global Conference on Signal and Information Processing, Anaheim, California, Nov 26-29, 2018. 
+			<a href="https://arxiv.org/abs/1810.08829">[ arXiv:1810.08829 ] </a>. 
+		</li>
+		<li> Min Su, Hantian Zhang, Kevin Schawinski, Ce Zhang, Michael A. Cianfrocco.
+			Generative adversarial networks as a tool to recover structural information from cryo-electron microscopy data. 
+			<a href="https://www.biorxiv.org/content/biorxiv/early/2018/02/12/256792.full.pdf">[ pdf ]</a> 
+		</li>
+	</ul>
+</td>
+<td>Hanlin GU</td>
+<td></td>
+</tr>
+	
+<tr>
+<td>11/26/2018, Mon</td>
+	<td>Lecture 22: An Introduction to Adversarials in Deep Learning. [<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture22_HuangZC_Adversarial.pdf"> slides </a>]
+	<br>
+</td>
+<td>Zhichao HUANG</td>
+<td></td>
+</tr>
+
+<tr>
+<td>11/28/2018, Wed</td>
+<td>Lecture 23: Final Project. <a href="https://github.com/deeplearning-math/slides/blob/master/project3.pdf">[ project3.pdf ]</a>.
+	<br>
+	<ul>[Reference]
+		<li> Introduction to Reinforcement Learning.
+			<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture23a_reinforcement.pdf">[ slides ]</a> 
+		</li>
+		<li> Recurrent Attention Models.
+			<a href="https://github.com/deeplearning-math/slides/blob/master/Lecture23b_RAM.pdf">[ slides ]</a>
+		</li>
+	</ul>
+	<ul>[Project 3]:
+		<li> <a href="https://github.com/deeplearning-math/slides/blob/master/project3.pdf">Assignment</a> </li>
+		<li> <a href="https://github.com/silkylove/deeplearning-math.github.io-6380P-fall-2018-/tree/master/Project3">Reports at GitHub</a> </li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+	--->
+	
+</tbody>
+</table>
+
+
+
+<hr>
+
+<address>
+by <a href="http://yao-lab.github.io/">YAO, Yuan</a>.
+</address>
+
+</body>
+</html>
