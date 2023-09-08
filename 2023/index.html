@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <META http-equiv=Content-Type content="text/html; charset=gb2312">
+   <title>MAFS 6010Z: AI in Fintech </title>
+</head>
+<body background="../../images/crysback.jpg">
+
+<!-- PAGE HEADER -->
+
+<div class="Section1">
+<table border="0" cellpadding="0" width="100%" style="width: 100%;">
+      <tbody>
+        <tr>
+
+       <td style="padding: 0.75pt;" width="80" align="center">
+
+      <p class="MsoNormal">&nbsp;<img width="64" height="64"
+ id="_x0000_i1025"
+ src="../../images/hkust0_starry.jpg" alt="PKU">
+          </p>
+       </td>
+       <td style="padding: 0.75pt;">
+      <p>
+<span style="font-size: 18pt;">
+<b><big>MAFS 6010Z. Artificial Intelligence in Fintech <br>
+   Fall 2023</big></b>
+<br>
+</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="MsoNormal" align="center" style="text-align: center;">
+<hr size="2" width="100%" align="center">  </div>
+
+<ul type="disc">
+
+</ul>
+
+<!-- COURSE INFORMATION BANNER -->
+
+<table border="0" cellpadding="0" width="100%" bgcolor="#990000"
+ style="background: rgb(153,0,0) none repeat scroll 0% 50%; width: 100%;">
+      <tbody>
+
+        <tr>
+       <td style="padding: 2.25pt;">
+      <p class="MsoNormal"><b><span
+ style="font-size: 13.5pt; color: white;">Course Information</span></b></p>
+       </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<!-- COURSE INFORMATION -->
+
+<h3>Synopsis</h3>
+<p style="margin-left: 0.5in;">
+<big> This course offers a comprehensive exploration of the fundamental concepts and underlying principles of artificial intelligence (AI). It delves into the core principles of machine learning and provides valuable insights through case studies of relevant technologies. By providing opportunities for hands-on experimentation with machine learning applications, the course aims to inspire students to devise innovative approaches to address real-life problems in fintech using readily-available AI technologies. 	</big>
+<br>
+	<big>
+		<b>Prerequisite</b>: Some preliminary course on (statistical) machine learning, applied statistics, and deep learning will be helpful.
+	</big>
+</p>
+
+
+<h3>Instructors: </h3>
+		
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://yao-lab.github.io/">Yuan Yao</a>  </em>
+</big>
+</p>
+
+<h3>Time and Place:</h3>
+<p style="margin-left: 0.5in;">
+<big><em>Monday 19:30-22:20pm, Rm 4619 (Lift 31-32)</em> <br>
+</big>
+<!---
+<big><em>This term we will be using Piazza for class discussion. The system is highly catered to getting you help fast and efficiently from classmates and myself. 
+	Rather than emailing questions to the teaching staff, I encourage you to post your questions on Piazza. If you have any problems or feedback for the developers, email team@piazza.com. <br>
+Find our class page at: <a href="https://piazza.com/ust.hk/spring2020/mafs6010u/home">https://piazza.com/ust.hk/spring2020/mafs6010u/home</a></em></big> 
+--->
+<br>
+</p>
+	
+<h3>Reference (&#21442;&#32771;&#25945;&#26448;)</h3>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+		<em> <a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning, with applications in R (ISLR).</a> By James, Witten, Hastie, and Tibshirani </em>
+
+	</big>
+
+	</p>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+		<em> <a href="https://github.com/JWarmenhoven/ISLR-python/">ISLR-python, By Jordi Warmenhoven</a>. </em>
+
+	</big>
+
+	</p>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+		<em> <a href="https://github.com/mscaudill/IntroStatLearn">ISLR-Python: Labs and Applied, by Matt Caudill</a>. </em>
+
+	</big>
+
+	</p>
+
+	<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://www.manning.com/books/deep-learning-with-python?a_aid=keras&a_bid=76564dff">Manning: Deep Learning with Python</a>, by Francois Chollet</em> [<a href="https://github.com/fchollet/deep-learning-with-python-notebooks">GitHub source in Python 3.6 and Keras 2.0.8</a>]
+</big>
+</p>
+
+	<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://www.deeplearningbook.org/">MIT: Deep Learning</a>, by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+</em>
+</big>
+</p>
+
+	
+
+<h3>Tutorials: preparation for beginners</h3>
+<p style="margin-left: 0.5in;">
+<big>
+	<em><a href="http://cs231n.github.io/python-numpy-tutorial/">Python-Numpy Tutorials</a> by Justin Johnson </em>
+</big>
+</p>
+
+<p style="margin-left: 0.5in;">
+<big>
+	<em><a href="http://scikit-learn.org/stable/tutorial/">scikit-learn Tutorials</a>: An Introduction of Machine Learning in Python</em>
+</big>
+</p>	
+
+<p style="margin-left: 0.5in;">
+<big>
+	<em><a href="http://cs231n.github.io/ipython-tutorial/">Jupyter Notebook Tutorials</a> </em>
+</big>
+</p>
+	
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://pytorch.org/tutorials/">PyTorch Tutorials</a> </em>
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://www.di.ens.fr/~lelarge/dldiy/">Deep Learning: Do-it-yourself with PyTorch</a>, </em> A course at ENS
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://www.tensorflow.org/tutorials/">Tensorflow Tutorials</a></em>
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="https://mxnet.incubator.apache.org/tutorials/index.html">MXNet Tutorials</a></em>
+</big>
+</p>
+<p style="margin-left: 0.5in;">
+<big>
+<em><a href="http://deeplearning.net/software/theano/tutorial/">Theano Tutorials</a></em>
+</big>
+</p>	
+
+
+<p style="margin-left: 0.5in;">
+
+<big>
+
+<em> <a href="http://www-stat.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning (ESL).</a> 2nd Ed. By Hastie, Tibshirani, and Friedman </em>
+
+</big>
+
+</p>
+
+	
+
+	<p style="margin-left: 0.5in;">
+
+	<big>
+
+	<em> <a href="https://github.com/sujitpal/statlearning-notebooks">statlearning-notebooks</a>, by Sujit Pal, Python implementations of the R labs for the <a href="https://lagunita.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about">StatLearning: Statistical Learning</a> online course from Stanford taught by Profs Trevor Hastie and Rob Tibshirani.</em>
+
+	</big>
+
+	</p>
+
+
+<h3>Homework and Projects:</h3>
+
+<p style="margin-left: 0.5in;">
+<big><em> TBA (To Be Announced) </em>
+</big></p>
+
+<h3>Teaching Assistant:</h3>
+
+<p style="margin-left: 0.5in;">
+<big> <br>
+Email: Mr. CAO, He < <em> aifin.hkust (add "AT gmail DOT com" afterwards) </em> >
+</big>
+</p>
+	
+				
+<h3>Schedule</h3>
+
+<table border="1" cellspacing="0">
+<tbody>
+
+<tr>
+<td align="left"><strong>Date</strong></td>
+<td align="left"><strong>Topic</strong></td>
+<td align="left"><strong>Instructor</strong></td>
+<td align="left"><strong>Scriber</strong></td>
+</tr>
+
+<tr>
+<td>02/09/2021, Thu </td>
+<td>Lecture 01: Overview and History of Artificial Intelligence in Fintech. [<a href="slides/Lecture01_overview.pdf"> slides </a>]
+	<ul>[ Guest Talk ]
+		<li> Title: An Overview of Quant Modeling and Trading: Theory and Practice [<a href="slides/Lecture01_quant_AI_overview_ust.pdf"> slides </a>] </li>
+		<li> Speaker: Prof. <a href="https://mikezhang.com"> Michael Zhang</a>, CUHK </li>
+		<li> Bio: Professor Michael Zhang is a Chair Professor of Decision Sciences and Managerial Economics at the Chinese University of Hong Kong. 
+			He serves as the Associate Dean of Innovation and Impact, Co-Executive Director of Asia Pacific Institute of Business, Co-Director of 
+			Hong Kong-Shenzhen Finance Research Centre at the CUHK Business School. Externally, he is also affiliated with MIT Initiative on Digital Economy, 
+			Guanghua School of Management of Peking University and Leibniz Centre for European Economic Research (ZEW).
+			
+                     He has a PhD in Management from MIT Sloan School of Management, an MSc in Management, a BE in Computer Science and a BA in English 
+		from Tsinghua University. Before joining the academia, he worked as an analyst for an investment bank, and as an international marketing manager 
+			for a high-tech company. He holds a US patent, and cofounded several companies in Social Networking (Unknown Space, MITBBS, the biggest 
+			social network for Chinese in America) and FinTech (Super Quantum Fund). 
+		</li>
+	</ul>
+		
+	<ul>[ Project 1 ]
+		<li> Warm-up project description [<a href="project1/project1.pdf"> pdf </a>] </li>
+		<li> Kaggle: Home Credit Default Risk [<a href="https://www.kaggle.com/c/home-credit-default-risk"> link </a>]
+		</li>
+		
+		<!---
+		<li> GitHub Repository for reports of Project 1
+		<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/aifin/2021/project1//"> [ GitHub ] </a>
+		<p>
+		</li>	
+		--->
+		
+	</ul>
+
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+	
+
+<!---		
+<tr>
+<td>09/09/2021, Thu </td>
+<td>Lecture 02: Supervised Learning: Linear Regression and Classification <a href="slides/Lecture02_linear.pdf">[ slides ]</a>
+	<ul>[ Reference ]
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Linear Regression Python Notebook <a href="notebook/MAFS6010_Regression.ipynb"> [ MAFS6010_Regression.ipynb ] </a> </li> 
+		<li> Linear Classification Python Notebook <a href="notebook/MAFS6010_Classification.ipynb"> [ MAFS6010_Classification.ipynb ] </a> </li> 
+ 	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>		
+
+
+
+<tr>
+<td>16/09/2021, Thu </td>
+<td>Lecture 03: Model Assessment and Selection: Subset, Ridge, Lasso, and PCR <a href="slides/Lecture03_selection.pdf">[ slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Python Notebook for Model Selection (Subset, Ridge, Lasso, and Principal Component Regression) 
+			<a href="notebook/MAFS6010_Selection.ipynb"> [ MAFS6010_Selection.ipynb ] </a> </li> 
+	</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>23/09/2021, Thu </td>
+<td>Lecture 04: Decision Tree, Bagging, Random Forests and Boosting <a href="slides/Lecture04_tree.pdf">[ YY's slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Python Notebook for Decision Trees, Bagging, Random Forests and Boosting 
+			<a href="notebook/MAFS6010_tree.ipynb"> [ MAFS6010_tree.ipynb ] </a> </li> 
+	</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>30/09/2021, Thu</td>
+<td>Lecture 05: Support Vector Machines <a href="slides/Lecture05_svm.pdf">[ YY's slides ]</a> 
+	<br>
+	<ul>[Reference]:
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Python Notebook for Support Vector Machines 
+			<a href="notebook/MAFS6010_svm.ipynb"> [ MAFS6010_svm.ipynb ] </a> </li> 
+	</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+<td>07/10/2021, Thu</td>
+<td>Lecture 06: An Introduction to Convolutional Neural Networks [<a href="slides/Lecture06_CNN.pdf"> YY's slides </a>] </a>  
+	<br>
+	<ul>[Reference]:
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> LeNet5 for MNIST dataset in Pytorch Notebook 
+			[<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/aifin/2021/notebook/LeNet5_mnist.ipynb"> LeNet5_mnist.ipynb </a>] </li>
+		<li> LeNet5 for Cifar10 dataset in Pytorch Notebook 
+			[<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/aifin/2021/notebook/LeNet5_cifar10.ipynb"> LeNet5_cifar10.ipynb </a>] </li>
+		<li> AlexNet for Cifar10 dataset in Pytorch Notebook 
+			[<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/aifin/2021/notebook/AlexNet_cifar10.ipynb"> AlexNet_cifar10.ipynb </a>] </li>
+		<li> ResNet for Cifar10 dataset in Pytorch Notebook 
+			[<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/aifin/2021/notebook/ResNet_cifar10.ipynb"> ResNet_cifar10.ipynb </a>] </li>
+
+	</ul>
+	<ul>[Reading Material]:
+	<li> <B>Shihao Gu, Bryan Kelly and <a href="https://dachxiu.chicagobooth.edu/#research">Dacheng Xiu</a></B>
+		<br> <B>"Empirical Asset Pricing via Machine Learning"</B>, Review of Financial Studies, Vol. 33, Issue 5, (2020), 2223-2273. Winner of the 2018 Swiss Finance Institute Outstanding Paper Award.
+	 	<br> 
+		[<a href="https://dachxiu.chicagobooth.edu/download/ML.pdf"> link </a>]
+	<p>
+	</li>	
+	<li> <B>Jingwen Jiang, Bryan Kelly and <a href="https://dachxiu.chicagobooth.edu/#research">Dacheng Xiu</a></B>
+		<br> <B>"(Re-)Imag(in)ing Price Trends"</B>, Chicago Booth Report, Aug 2021
+	 	<br> 
+		[<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3756587"> link </a>]
+	<p>
+	</li>	
+	<li> <B>Tracy Ke, Bryan Kelly and <a href="https://dachxiu.chicagobooth.edu/#research">Dacheng Xiu</a></B>
+		<br> <B>"Predicting Returns with Text Data"</B>, Aug. 2021. Winner of the 2019 CICF Best Paper Award.
+	 	<br> 
+		[<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3389884"> link </a>]
+	<p>
+	</li>	
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
+---->
+
+<!---
+<td>21/10/2021, Thu</td>
+<td>Lecture 07: Introduction of quantitative investing with machine learning  </a>  
+	<br>
+	<ul>[ Guest Talk ]
+		<li> Title: Introduction of quantitative investing with machine learning [<a href="slides/Lecture07_QuantML.pdf"> slides </a>] </li>
+		<li> Speaker: Prof. <a href="http://www.bm.ust.hk/acct/faculty-and-staff/directory/achy">Haifeng You</a>, HKUST </li>
+		<li> Bio: Haifeng You is a Professor of Accounting and Co-Director of the Center for Securities Analysis with Financial Technology at 
+		Hong Kong University of Science and Technology (HKUST). His research focuses on the role of financial information and financial technology 
+		in equity investment. He has published on leading academic and professional journals such as Journal of Financial Economics, Journal of 
+		Accounting and Economics, and Financial Analyst Journal. Previously, he served as the Head of Quantitative Equity Research at China Investment 
+		Corporation and Quantitative Researcher at Barclays Global Investors.  He has also served as advisors and consultants for investment firms 
+		such as GSA capital in the UK and China Pacific Asset Managemen and Bosera Asset Management in China, helping them to build Asian and global 
+		quantitative equity strategies. 
+		
+Professor You holds a PhD degree in Accounting from University of California, Berkeley and a BA degree in Finance from Peking University.
+		</li>
+	</ul>
+	
+	<ul>[ Topics on CNNs ]:
+		<li> Visualizing CNNs [<a href="slides/Lecture07_CNN2.pdf"> YY's slides </a>] </li>
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Visualization of VGG16 in Pytorch Notebook 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/vgg16-visualization.ipynb"> vgg16-visualization.ipynb </a>] </li>
+		<li> Class activation heatmap of VGG16 in Pytorch Notebook 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/vgg16-heatmap.ipynb"> vgg16-heatmap.ipynb </a>] </li>
+		<li> Fine-tuning (transfer learning) of ResNet in Pytorch Notebook 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/finetuning_resnet.ipynb"> finetuning_resnet.ipynb </a>] </li>
+		<li> Neural Style of HKUST at Starry Night in Pytorch Notebook 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/neural_style_starry-hkust.ipynb"> neural_style_starry-hkust.ipynb </a>] </li>
+		<li> Adversarial examples of LeNet5 with MNIST 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/LeNet5_mnist_fgsm.ipynb"> LeNet5_mnist_fgsm.ipynb </a>] </li>
+	</ul>
+	
+	
+			
+</td>
+<td>Haifeng You<br>Y.Y.</td>
+<td></td>
+</tr>
+----->
+
+
+
+	<!---
+
+
+<tr>
+<td>03/31/2020, Tue</td>
+<td>Lecture 06: A Tutorial on Applications of Machine Learning: Pair Trading. 
+	<br>
+	<ul>[Reference]:
+		<li> Weizhi ZHU: 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/PairTrading%20-%201.ipynb"> PairTrading-1.ipynb </a>] 
+			[<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/PairTrading%20-%202.ipynb"> PairTrading-2.ipynb </a>]
+				</li>
+	</ul>
+	<ul>[ Topic ]: Anthony Woo's talk  [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202019.03.31.pdf"> AW's slides </a>]
+		<li> Global Markets Overview (Cont'd) </li>
+		<li> Case Study on Prowler (Cont'd) </li>
+		<li> Case Study on QxBranch & Rigetti </li>
+		<li> Best Practices of CV Writing </li>
+	</ul>
+</td>
+<td>Weizhi ZHU; <br> Anthony Woo</td>
+<td></td>
+</tr>
+
+
+<td>05/19/2020, Tue</td>
+<td>Lecture 13: Tutorial on Reinforcement Learning in Quantitative Trading [<a href="slides/Lecture12_tutorial_RLQT.pdf"> Weizhi's slides </a>]  
+	<br>
+	<ul>[ Reference ]:
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Python Notebook on Deep Q-Learning in Trading: [<a href="https://github.com/aifin-hkust/aifin-hkust.github.io/blob/master/2020/notebook/Tutorial_DQN_in_Trading.ipynb"> link </a> ]
+		</li>
+		<li> Kaggle: M5 Forecasting - Accuracy, Estimate the unit sales of Walmart retail goods. [<a href="https://www.kaggle.com/c/m5-forecasting-accuracy"> link </a>]
+		</li>
+		<li> Kaggle: M5 Forecasting - Uncertainty, Estimate the uncertainty distribution of Walmart unit sales. [<a href="https://www.kaggle.com/c/m5-forecasting-uncertainty"> link </a>]
+		</li>
+		<li> Kaggle: Home Credit Default Risk [<a href="https://www.kaggle.com/c/home-credit-default-risk"> link </a>]
+		</li>
+		<li> Kaggle: COVID-19 Open Research Dataset Challenge (CORD-19) [<a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge"> link </a>]
+		</li>
+		<li> Quantapian: free education, data, and tools so anyone can pursue quantitative finance. [<a href="https://www.quantopian.com/"> link </a>]
+		</li>
+	</ul>
+	<ul>[ Topic ]
+		<li>  Speakers: <a href="https://www.linkedin.com/in/brzheng">Brian Zheng</a> and Anthony Woo
+		</li>
+		<li>  [<a href="slides/HKUST%20-%20AI%20in%20Finance%20-%202020.05.19.pdf"> slides </a>]
+		</li>
+	</ul>
+
+
+</td>
+<td>Weizhi ZHU<br> A.W.<br> Y.Y.</td>
+<td></td>
+</tr>
+
+--->
+
+</tbody>
+</table>
+
+
+
+<hr>
+
+<address>
+by <a href="http://yao-lab.github.io/">YAO, Yuan</a>.
+</address>
+
+</body>
+</html>
+
+
+
+
+
