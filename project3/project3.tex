@@ -49,7 +49,7 @@
 
 \begin{document}
 
-\lecture{Project 3: Final}{Yuan Yao}{Due: 23:59 Sunday 10 Dec, 2023}{20 Nov, 2023}
+\lecture{Project 3: Final Project}{Yuan Yao}{Due: 23:59 Wednesday 4 Dec, 2024}{13 Nov, 2024}
 
 %The problem below marked by $^*$ is optional with bonus credits. % For the experimental problem, include the source codes which are runnable under standard settings. 
 %
@@ -108,30 +108,61 @@ with source codes such as Python (Jupyter) Notebooks with a detailed documentati
 
 \newpage 
 
-\section{Kaggle: G-Research Crypto Forecasting}
+\section{Kaggle: Jane Street Real-Time Market Data Forecasting}
 
-%\subsection{Project Overview}
-Over USD40 billion worth of cryptocurrencies are traded every day. They are among the most popular assets for speculation and investment, yet have proven wildly volatile. Fast-fluctuating prices have made millionaires of a lucky few, and delivered crushing losses to others. Could some of these price movements have been predicted in advance?
+\subsection{Project Overview}
+Modeling problems in modern financial markets are inherently complex due to unique challenges such as fat-tailed distributions, non-stationary time series, and data that often violate assumptions of standard statistical methods. 
 
-In this competition, you'll use your machine learning expertise to forecast short term returns in 14 popular cryptocurrencies. We have amassed a dataset of millions of rows of high-frequency market data dating back to 2018 which you can use to build your model. Once the submission deadline has passed, your final score will be calculated over the following 3 months using live crypto data as it is collected.
-
-\url{https://www.kaggle.com/c/g-research-crypto-forecasting}
+In this competition, you are tasked with building a model using real-world data derived from Jane Street's production systems, providing a glimpse into the complexities of modern trading. The dataset includes features and responders related to markets where automated trading strategies are employed, highlighting the importance of robust modeling. To balance relevance and the proprietary nature of trading, some features and responders have been anonymized and lightly obfuscated. Despite these adjustments, the essence of the problem remains intact, offering a meaningful and challenging task that reflects the real-world work done at Jane Street.
 
 
-%\subsection{Problem Identification}
-%The cryptocurrency market has been skyrocketing recently, and it is estimated that over USD40 billion worth of cryptocurrencies are traded every single day. Cryptocurrencies have become one of the most popular and trending assets for speculation and investment, however, it has been proven to be wildly volatile, where a person can make a fortune and become a millionaire in one day, and lose all his assets the day after. While a few people have made a great fortune through the fast-fluctuating prices, others have been experiencing losses. Hence, we would like to try whether we can predict some of these price movements in advance and forecast short term returns in 14 popular cryptocurrencies through machine learning techniques.
+\url{https://www.kaggle.com/competitions/jane-street-real-time-market-data-forecasting/overview}
 
-\subsection{Background Knowledge}
-The simultaneous activity of thousands of traders ensures that most signals will be transitory, persistent alpha will be exceptionally difficult to find, and the danger of overfitting will be considerable. In addition, since 2018, interest in the cryptomarket has exploded, so the volatility and correlation structure in our data are likely to be highly non-stationary. The successful contestant will pay careful attention to these considerations, and in the process gain valuable insight into the art and science of financial forecasting.
+\subsection{Data Description}
+You are provided real-time market data from Jane Street with anonymized and lightly obfuscated features and responders.
 
-\subsection{Model and Methods}
-Given a time-series based dataset of cryptocurrency prices, one can use the hierarchical time series model, which is to train a model for all time, models per weekday, model per day, etc. and ensemble them together. Multiple popular models could be applied and you might conduct research about the effectiveness of these models. For example, LSTM is popular among quantitative finance fields, as it can capture the relationship between previous cryptocurrency prices. Since cryptocurrency price is a time-dependent variable, multiple time-series prediction models may also be adopted, like traditional ARIMA, GARCH, and Dynamic linear model. You are welcome to create innovative methods, bringing more insights to the quantitative finance field.  
- 
-\subsection{Data Source}
-Kaggle link: 
+The competition will proceed in two phases:
 
-\url{https://www.kaggle.com/c/g-research-crypto-forecasting/data}
+1. A model training phase (11:59 PM UTC Oct 14, 2024 - 11:59 PM UTC Jan 13, 2025) with a test set of historical data. This test set has about 4.5 million rows.
 
+2. A forecasting phase (after 11:59 PM UTC Jan 13, 2025) with a test set to be collected after submissions close. You should expect this test set to be about the same size as the test set in the first phase.
+
+
+During the final weeks of the model training phase, the public test set will be extended to include data closer to the submission deadline. 
+At the start of the forecasting phase, the unscored public test set will be extended up to the final day of the model training phase and the private set updated roughly every two weeks.
+
+
+Currently, we are at the model training phase, and the leadboard only depends on the public data.
+
+If you choose this project, you need to join the competition and download the data from: \url{https://www.kaggle.com/competitions/jane-street-real-time-market-data-forecasting/data}
+
+
+
+
+%\section{Kaggle: G-Research Crypto Forecasting}
+%
+%%\subsection{Project Overview}
+%Over USD40 billion worth of cryptocurrencies are traded every day. They are among the most popular assets for speculation and investment, yet have proven wildly volatile. Fast-fluctuating prices have made millionaires of a lucky few, and delivered crushing losses to others. Could some of these price movements have been predicted in advance?
+%
+%In this competition, you'll use your machine learning expertise to forecast short term returns in 14 popular cryptocurrencies. We have amassed a dataset of millions of rows of high-frequency market data dating back to 2018 which you can use to build your model. Once the submission deadline has passed, your final score will be calculated over the following 3 months using live crypto data as it is collected.
+%
+%\url{https://www.kaggle.com/c/g-research-crypto-forecasting}
+%
+%
+%%\subsection{Problem Identification}
+%%The cryptocurrency market has been skyrocketing recently, and it is estimated that over USD40 billion worth of cryptocurrencies are traded every single day. Cryptocurrencies have become one of the most popular and trending assets for speculation and investment, however, it has been proven to be wildly volatile, where a person can make a fortune and become a millionaire in one day, and lose all his assets the day after. While a few people have made a great fortune through the fast-fluctuating prices, others have been experiencing losses. Hence, we would like to try whether we can predict some of these price movements in advance and forecast short term returns in 14 popular cryptocurrencies through machine learning techniques.
+%
+%\subsection{Background Knowledge}
+%The simultaneous activity of thousands of traders ensures that most signals will be transitory, persistent alpha will be exceptionally difficult to find, and the danger of overfitting will be considerable. In addition, since 2018, interest in the cryptomarket has exploded, so the volatility and correlation structure in our data are likely to be highly non-stationary. The successful contestant will pay careful attention to these considerations, and in the process gain valuable insight into the art and science of financial forecasting.
+%
+%\subsection{Model and Methods}
+%Given a time-series based dataset of cryptocurrency prices, one can use the hierarchical time series model, which is to train a model for all time, models per weekday, model per day, etc. and ensemble them together. Multiple popular models could be applied and you might conduct research about the effectiveness of these models. For example, LSTM is popular among quantitative finance fields, as it can capture the relationship between previous cryptocurrency prices. Since cryptocurrency price is a time-dependent variable, multiple time-series prediction models may also be adopted, like traditional ARIMA, GARCH, and Dynamic linear model. You are welcome to create innovative methods, bringing more insights to the quantitative finance field.  
+% 
+%\subsection{Data Source}
+%Kaggle link: 
+%
+%\url{https://www.kaggle.com/c/g-research-crypto-forecasting/data}
+%
 %They have amassed a dataset of millions of rows of high-frequency market data dating back to 2018 which we can use to build our model. Once the submission deadline has passed, our final score will be calculated over the following 3 months using live crypto data as it is collected.
 
 \section{Kaggle: M5 Forecasting}
@@ -147,6 +178,7 @@ There are two complementary competitions that together comprise the M5 forecasti
 How much camping gear will one store sell each month in a year? To the uninitiated, calculating sales at this level may seem as difficult as predicting the weather. Both types of forecasting rely on science and historical data. While a wrong weather forecast may result in you carrying around an umbrella on a sunny day, inaccurate business forecasts could result in actual or opportunity losses. In this competition, in addition to traditional forecasting methods, you're also challenged to use machine learning to improve forecast accuracy.
 
 In this competition, you will use hierarchical sales data from Walmart, the world's largest company by revenue, to forecast daily sales for the next 28 days and to make uncertainty estimates for these forecasts. The data, covers stores in three US States (California, Texas, and Wisconsin) and includes item level, department, product categories, and store details. In addition, it has explanatory variables such as price, promotions, day of the week, and special events. Together, this robust dataset can be used to improve forecasting accuracy.
+
 
 \section{Cryptocurrency Trading}
 \subsection{Project Overview}
@@ -199,6 +231,7 @@ If you want to explore the performance of your trading strategy in more cryptocu
 % You can use these data to formulate and evaluate trading strategies (including backtest). The submission requirements are the same as above.
 
 
+
 %%% LLM %%%
 \section{Large Language Models $+$ Financial Analysis}
 \subsection{Project Overview}
@@ -232,8 +265,15 @@ You are required to submit your report, which should include a demonstration of 
     \item Financial Analyst App - GPT-4, Streamlit, and Llama-Index Tutorial \url{https://youtu.be/c_LAIkkhKts?si=zbyANC91SymDJuV3}
     \item LlamaIndex stater tutorial \url{https://gpt-index.readthedocs.io/en/latest/getting_started/starter_example.html}
     \item HKUST Azure OpenAI API service \url{https://itsc.hkust.edu.hk/services/it-infrastructure/azure-openai-api-service}
+    \item Other API services: \url{https://api.bianxie.ai}, AI/ML API:\url{https://aimlapi.com}
     \item FinGPT-Forecaster Huggingface Space Demo \url{https://huggingface.co/spaces/FinGPT/FinGPT-Forecaster}
     \item Huggingface Generation with LLMs tutorial \url{https://huggingface.co/docs/transformers/llm_tutorial}
+    \item Last year student's project presentation via Youtube:
+    \begin{itemize}
+        \item \url{https://www.youtube.com/watch?v=4nkZgyifR_s}
+        \item \url{https://youtu.be/Lk8iM29FGcI?si=Pgf9oBBw4hH_YwEd}
+    \end{itemize}
+        
 \end{itemize}
 
 
@@ -272,9 +312,9 @@ In this reproduction process, we mainly focus on understanding the data preparat
     
     \begin{figure}
         \centering
-        \includegraphics[width=.3\textwidth]{../project2/img/1.png}
+        \includegraphics[width=.3\textwidth]{img/1.png}
         \hspace{0.5in}
-        \includegraphics[width=.3\textwidth]{../project2/img/2.png}
+        \includegraphics[width=.3\textwidth]{img/2.png}
         \caption{Examples of 20-day Image with volume bar and moving average line}
         \label{20-day image}
     \end{figure}
@@ -288,7 +328,7 @@ In this reproduction process, we mainly focus on understanding the data preparat
     
     \begin{figure}
         \centering
-        \includegraphics[width=.25\textwidth, height=0.45\textwidth]{../project2/img/cnn.png}
+        \includegraphics[width=.25\textwidth, height=0.45\textwidth]{img/cnn.png}
         \caption{Diagram of CNN model}
         \label{cnn model}
     \end{figure}
