@@ -458,6 +458,60 @@ Jingfeng Wu is a postdoctoral fellow at the Simons Institute for the Theory of C
 <td></td>
 </tr>
 
+
+	<tr>
+<td>11/04/2025, Tue</td>
+<td>Lecture 9: Transformer and Applications [<a href="slides/Lecture09_transformer.pdf"> slides </a>]  
+	<br>
+	<ul>[Reference]:
+		<li> To view .ipynb files below, you may try <a href="https://nbviewer.jupyter.org/"> [ Jupyter NBViewer] </a> </li> 
+		<li> Pytorch Twitter Sentiment Analysis: RNN, LSTM, BiLSTM, Multihead Self-Attention. 
+		[<a href="../notebook/PyTorch-RNN.ipynb"> RNN (ipynb) </a>] 
+		[<a href="../notebook/PyTorch-LSTM.ipynb"> LSTM (ipynb) </a>] 
+		[<a href="../notebook/PyTorch-BiLSTM.ipynb"> BiLSTM (ipynb) </a>] 
+		[<a href="../notebook/PyTorch-BiLSTM-with-MHSA.ipynb"> BiLSTM with Multihead Attention (ipynb) </a>] 	
+		[<a href="../notebook/PyTorch-BiLSTM-with-bertEmbedding.ipynb"> BERT embedding with BiLSTM (ipynb) </a>]
+		[<a href="https://www.kaggle.com/kazanova/sentiment140"> Sentiment140 dataset </a>]
+		</li>
+		<li> Pytorch Sentiment Analysis with IMDB data: RNN, (bi)-LSTM, CNN, Transformer, BERT, etc. 
+			[<a href="https://github.com/bentrevett/pytorch-sentiment-analysis"> GitHub </a>]
+		</li>
+		<li> Illustrated Transformer by Jay Alammar: [<a href="https://jalammar.github.io/illustrated-transformer/"> link </a>] </li>
+		<li> The Annotated Transformer Tutorial by Sasha Rush: [<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html"> link </a>]
+		</li>
+		<li> BERT generation of Shakespeare's sonnet: [<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/data/BERT_shakespeare_gen.ipynb"> BERT_shakespeare_gen.ipynb </a>]
+		</li>
+		<li> BERT next sentence generation of Shakespeare's sonnet and Chinese poems: 
+			[<a href="https://github.com/yao-lab/yao-lab.github.io/blob/master/data/BERT_shakespeare_nextsen.ipynb"> BERT_shakespeare_nextsen.ipynb </a>]
+		</li>
+		<li> Chinese BERT (Whole-Word-Masking): [<a href="https://github.com/ymcui/Chinese-BERT-wwm"> link </a>]
+		</li>
+	</ul>	
+
+	<ul> [ Seminar ]
+		<li><B>Title</B>: Transformers As Statisticians: Provable In-Context Learning with In-Context Algorithm Selection. [<a href="slides/Seminar_Mei_transformer_statistician_slides.pdf"> slides </a>] [<a href="https://youtu.be/vKZ_I05sSj0?si=OSnLkWJP_oDlfcdg"> video </a>] </li>  
+		<li> <B>Speaker</B>: Prof. <a href="https://www.stat.berkeley.edu/~songmei/">Song MEI</a>, University of California at Berkeley. </li>
+		<li> <B>Abstract</B>: 
+			Neural sequence models based on the transformer architecture have demonstrated remarkable <I>in-context learning</I> (ICL) abilities, where they can perform new tasks when prompted with training and test examples, without any parameter update to the model. 
+			This work first provides a comprehensive statistical theory for transformers to perform ICL. Concretely, we show that transformers can implement a broad class of standard machine learning algorithms in context, such as least squares, ridge regression, 
+			Lasso, learning generalized linear models, and gradient descent on two-layer neural networks, with near-optimal predictive power on various in-context data distributions. Using an efficient implementation of in-context gradient descent as the underlying mechanism, 
+			our transformer constructions admit mild size bounds, and can be learned with polynomially many pretraining sequences.
+Building on these ``base'' ICL algorithms, intriguingly, we show that transformers can implement more complex ICL procedures involving <I>in-context algorithm selection</I>, akin to what a statistician can do in real life -- A <I>single</I> transformer can adaptively select different base ICL algorithms -- 
+			or even perform qualitatively different tasks -- on different input sequences, without any explicit prompting of the right algorithm or task. We both establish this in theory by explicit constructions, and also observe this phenomenon experimentally. 
+			In theory, we construct two general mechanisms for algorithm selection with concrete examples: pre-ICL testing, and post-ICL validation. As an example, we use the post-ICL validation mechanism to construct a transformer that can perform nearly Bayes-optimal ICL on a challenging 
+			task -- noisy linear models with mixed noise levels. Experimentally, we demonstrate the strong in-context algorithm selection capabilities of standard transformer architectures.		
+		</li>
+		<li> <B>Bio</B>: Song Mei is an Assistant Professor in the Department of Statistics and the Department of Electrical Engineering and Computer Sciences at UC Berkeley. In June 2020, he received Ph.D. from Stanford, with Prof. Andrea Montanari. 
+			Song's research is motivated by data science and AI, and lies at the intersection of statistics, machine learning, information theory, and computer science. His current research interests include language models and diffusion models, theory of deep learning, 
+			theory of reinforcement learning, high dimensional statistics, quantum algorithms, and uncertainty quantification. Song received Sloan Research Fellowship in 2025 and NSF career award in 2024.
+		</li>
+		<li> <B>Reference</B>: Yu Bai, Fan Chen, Huan Wang, Caiming Xiong, and Song Mei. Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection. NeurIPS, 2023 (Oral). [<a href="https://arxiv.org/abs/2306.04637"> arXiv:2306.04637</a>]</li>
+	</ul>
+</td>
+<td>Y.Y.</td>
+<td></td>
+</tr>
+
 <!----
 
 	
