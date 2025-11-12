@@ -100,7 +100,7 @@ with source codes such as Python (Jupyter) Notebooks with a detailed documentati
 \item For Kaggle contests, please register your team with name in the format of mafs5440\_lastname, so that we could easily find your results on Kaggle. For example, a team with Shawn Zhu and Kate Wong would be named by mafs5440\_Zhu\_Wong.
 
 \item In the report, show your proposed scientific questions to explore and main results with a careful analysis supporting the results toward answering your problems. If possible, you should include your Kaggle contest score or rating in the report. Remember: scientific analysis and reasoning are more important than merely the performance tables. Separate source codes may be submitted through email as a GitHub link, or a zip file.    
-\item Submit your report by email or paper version no later than the deadline, to the following address  (\href{mailto:aifin.hkust@gmail.com}{aifin.hkust@gmail.com}) with a title ``\underline{Mafs5440: Project 1}" % \#".  (\href{mailto:datascience.hw@gmail.com}{datascience.hw@gmail.com}) (\href{mailto:deeplearning.math@gmail.com}{deeplearning.math@gmail.com}) with Title: \underline{Math 6380P: Project 1}. % (\href{mailto:datascience\_hw@126.com}{datascience\_hw@126.com}). 
+\item Submit your report by email or paper version no later than the deadline, to the following address  (\href{mailto:aifin.hkust@gmail.com}{aifin.hkust@gmail.com}) with a title ``\underline{Mafs5440: Project 2}" % \#".  (\href{mailto:datascience.hw@gmail.com}{datascience.hw@gmail.com}) (\href{mailto:deeplearning.math@gmail.com}{deeplearning.math@gmail.com}) with Title: \underline{Math 6380P: Project 1}. % (\href{mailto:datascience\_hw@126.com}{datascience\_hw@126.com}). 
 
 
 \end{enumerate}
@@ -241,16 +241,18 @@ In this competition, you will use hierarchical sales data from Walmart, the worl
 
 
 %%% LLM %%%
+\iffalse
 \section{Large Language Models $+$ Financial Analysis}
 \subsection{Project Overview}
 Large Language Models (LLM) use transformer models and are trained using massive datasets. This enables them to recognize, translate, predict, or generate text or other content. LLMs have demonstrated remarkable capabilities in automating and streamlining financial analysis tasks. These models can process vast amounts of data, including news articles, research reports, financial statements, and market data, to extract valuable insights. By leveraging their deep learning capabilities, LLMs can identify patterns, trends, and anomalies in financial data, assisting analysts in making more informed investment decisions. 
 
-In this project, we present two cases that demonstrate the use of LLMs for financial analysis:
+For this project topic, we present an example of how to use LLMs for financial analysis:
+
+
 \begin{itemize}
 \item Case 1: Utilizing a powerful but closed ChatGPT model and flexible framework LlamaIndex, we create a retrieval-augmented generation system to build a customized analysis assistant.
 \item Case 2: By leveraging open-sourced domain-specific LLMs trained on financial data, we fulfill various analysis tasks such as sentiment analysis, financial forecasting, and risk assessment.
 \end{itemize}
-
 
 \subsection{Example 1: Financial News Analysis with Llama Index and ChatGPT}
 In this example, we use OpenAI and LlamaIndex to analyze financial news. 
@@ -264,24 +266,75 @@ The reference series of courses can be found at \url{https://www.youtube.com/pla
 FinGPT-Forecaster \url{https://github.com/AI4Finance-Foundation/FinGPT/tree/master/fingpt/FinGPT_Forecaster} is an open-source AI tool designed for financial analysis. It analyzes market news and optional financial data specifically for a chosen company. It provides a stock price movement forecast for the upcoming week, accompanied by a summarized analysis. The model, Fine-tuned on Llama-2-7b-chat-hf with LoRA, incorporates past year's DOW30 market data in its training process. One of the notable features of FinGPT-Forecaster is its adaptability and generalization capabilities, allowing it to provide accurate forecasts and insights across various stock symbols.
 
 In this example, we hope that you can try to deploy the FinGPT-Forecaster locally. The entire process will include downloading weights from Hugging Face $\rightarrow$ installing the necessary environment $\rightarrow$ acquiring raw financial data $\rightarrow$  generating example data and transforming it into Llama2 Format $\rightarrow$  performing model inference in the demo. Remember to refer to the documentation and resources provided with the model for detailed instructions on each step and to make the necessary adjustments based on your specific requirements and data.
+\fi
+
+\section{Large Language Models $+$ Financial Analysis}
+
+\subsection{Introduction to LLMs in Financial Analysis}
+Large Language Models (LLMs) utilize transformer architectures and are trained on massive datasets, enabling them to recognize, translate, predict, or generate text and other content. In the financial domain, LLMs have demonstrated remarkable capabilities in automating and streamlining complex analysis tasks. These models can process vast amounts of heterogeneous data, including news articles, research reports, financial statements, earnings calls, and real-time market data, to extract valuable insights and identify patterns that might be difficult for human analysts to detect at scale.
+
+\subsection{Recommended Topic: AI-Powered Hedge Fund with Multi-Agents}
+
+For this project, we recommend exploring the AI Hedge Fund repository (\url{https://github.com/virattt/ai-hedge-fund}), a highly acclaimed open-source project with over 42,000 GitHub stars that demonstrates the practical application of LLMs in investment management.
+
+The AI Hedge Fund project implements a multi-agent architecture where different AI agents simulate the investment philosophies and decision-making processes of renowned investors. The system employs twelve specialized investor agents, each embodying distinct investment philosophies:
+
+\begin{itemize}
+\item \textbf{Value Investing Agents}: Ben Graham (margin of safety focus), Charlie Munger (wonderful businesses at fair prices), Michael Burry (contrarian deep value), and Mohnish Pabrai (low-risk doubles)
+\item \textbf{Growth Investing Agents}: Cathie Wood (innovation and disruption), Phil Fisher (growth through research), and Peter Lynch (ten-baggers in everyday businesses)
+\item \textbf{Strategic Investors}: Bill Ackman (activist investing), Stanley Druckenmiller (macro and asymmetric opportunities), and Rakesh Jhunjhunwala (Indian market specialist)
+\item \textbf{Analytical Specialists}: Aswath Damodaran (valuation expert) and Warren Buffett (quality at reasonable prices)
+\end{itemize}
+
+Additionally, the system incorporates four analytical agents (Valuation, Sentiment, Fundamentals, and Technicals), a Risk Manager, and a Portfolio Manager that orchestrates final trading decisions.
+
+\subsection{Recommended Project Directions}
+
+\subsubsection{Direction 1: Implement a New Investment Agent}
+Develop and integrate a new AI agent based on your favorite investor or a unique investment philosophy. Your task includes:
+
+\begin{itemize}
+\item Research and codify the investment principles of your chosen investor (e.g., Ray Dalio's principles-based approach, George Soros's reflexivity theory, or David Tepper's distressed debt strategies)
+\item Implement the agent's decision-making logic using appropriate prompting strategies
+\item Integrate the new agent into the existing multi-agent framework
+\item Conduct backtesting to evaluate the agent's performance across different market conditions
+\item Compare your agent's decisions with existing agents to understand philosophical differences
+\end{itemize}
+
+The teaching assistant has developed a Streamlit-based user interface \url{https://github.com/fuxiaoyi/ai-hedge-fund-plus} that allows you to visualize agent decisions, compare strategies, and analyze portfolio performance metrics, making it easier to evaluate and present your results.
+
+\subsubsection{Direction 2: Novel Financial Applications}
+Extend the AI hedge fund framework to create innovative applications in financial investments. Your creativity is encouraged, but potential directions include:
+
+\begin{itemize}
+\item \textbf{Sector-Specific Analysis}: Develop specialized agents for specific sectors (e.g., biotech, renewable energy, cryptocurrency) with domain-specific knowledge
+\item \textbf{Risk Management Systems}: Create advanced risk assessment agents that can identify portfolio vulnerabilities and suggest hedging strategies
+\item \textbf{ESG Integration}: Implement environmental, social, and governance factors into investment decision-making processes
+\item \textbf{Alternative Data Integration}: Incorporate satellite data, social media sentiment, or patent filings into investment analysis
+\item \textbf{Market Regime Detection}: Develop agents that can identify changing market conditions and adapt strategies accordingly
+\end{itemize}
+
+Previous student projects have included implementations of financial new analysis and fundamental analysis, of which presentations can be found below:
+    \begin{itemize}
+        \item \url{https://www.youtube.com/watch?v=4nkZgyifR_s}
+        \item \url{https://youtu.be/Lk8iM29FGcI?si=Pgf9oBBw4hH_YwEd}
+    \end{itemize}  
+Your application should demonstrate both technical sophistication and practical relevance to financial markets.
 
 \subsection{Submission}
 You are required to submit your report, which should include a demonstration of your \textit{demo application} and the necessary \textit{analysis}. Additionally, please provide the source materials in a zip folder. The zip folder should contain the main logic codes and other essential files, excluding large data files such as checkpoint weights.
 
-\subsection{References}
+\subsection{Additional References}
 \begin{itemize}
+    \item TradingAgents: Multi-Agents LLM Financial Trading Framework (Paper) \url{https://arxiv.org/pdf/2412.20138}
+    \item TradingAgents Framework -\url{https://github.com/TauricResearch/TradingAgents}
+    \item Financial Agent - GitHub Repository \url{https://github.com/virattt/financial-agent}
     \item Financial Analyst App - GPT-4, Streamlit, and Llama-Index Tutorial \url{https://youtu.be/c_LAIkkhKts?si=zbyANC91SymDJuV3}
-    \item LlamaIndex stater tutorial \url{https://gpt-index.readthedocs.io/en/latest/getting_started/starter_example.html}
-    \item HKUST Azure OpenAI API service \url{https://itsc.hkust.edu.hk/services/it-infrastructure/azure-openai-api-service}
+    \item LlamaIndex starter tutorial \url{https://gpt-index.readthedocs.io/en/latest/getting_started/starter_example.html}
+    \item HKUST Azure OpenAI API service \url{https://itso.hkust.edu.hk/services/it-infrastructure/azure-openai-api-service}
     \item Other API services: \url{https://api.bianxie.ai}, AI/ML API:\url{https://aimlapi.com}
     \item FinGPT-Forecaster Huggingface Space Demo \url{https://huggingface.co/spaces/FinGPT/FinGPT-Forecaster}
     \item Huggingface Generation with LLMs tutorial \url{https://huggingface.co/docs/transformers/llm_tutorial}
-    \item Last year student's project presentation via Youtube:
-    \begin{itemize}
-        \item \url{https://www.youtube.com/watch?v=4nkZgyifR_s}
-        \item \url{https://youtu.be/Lk8iM29FGcI?si=Pgf9oBBw4hH_YwEd}
-    \end{itemize}
-        
 \end{itemize}
 
 
